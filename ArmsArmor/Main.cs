@@ -35,6 +35,33 @@ namespace ArmsArmor
             }
             static void Postfix(bool __state) {
                 if (!__state) {
+                    LocalizedStringHelper.Init();
+                    BasicFeatsProgression.Init();
+                    ExoticWeaponProficiencySelection.Init();
+                    WeaponTrainingSelection.Init();
+                    TempleSword.Init();
+                    StandardTempleSword.Init();
+                    SpikedLightShield.Init();
+                    SpikedHeavyShield.Init();
+                    SpikedHeavyShieldBashing.Init();
+                    LightShield.Init();
+                    HeavyShield.Init();
+                    IrongripGauntlets.Init();
+                    MonkWeaponProficiency.Init();
+                    BashingEnchantment.Init();
+                    BashingWeaponEnchantment.Init();
+                    ImpactEnchantment.Init();
+                    BashingShieldWeapon.Init();
+                    BashingShieldArmor.Init();
+                    ShieldMasterFeature.Init();
+                    TwoWeaponFightingAttackPenaltyPatch.Init();
+                    TwoWeaponFightingBasicMechanics.Init();
+                    ImprovedShieldBash.Init();
+                    ShieldBashAbility.Init();
+                    RapidShotAbility.Init();
+#if !PATCH21
+                    RapidShotBuff.Init();
+#endif
                 }
             }
         }
@@ -42,6 +69,7 @@ namespace ArmsArmor
         [HarmonyLib.HarmonyPatch(typeof(UnitDescriptor), "PostLoad")]
         class UnitDescriptorPostLoadPatch {
             static void Postfix(UnitDescriptor __instance) {
+                BasicFeatsProgression.Update(__instance);
             }
         }
     }

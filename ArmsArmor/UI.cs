@@ -15,6 +15,11 @@ namespace ArmsArmor
 
         public static void OnGui(UnityModManager.ModEntry modEntry) {
             try {
+                RenderCheckbox(ref Main.ModSettings.EquipWeaponWithoutProficiency, "Equip weapons without weapon proficiency (-4 to hit).");
+                RenderCheckbox(ref Main.ModSettings.EquipArmorWithoutProficiency, "Equip armor without armor proficiency (Penalty based on armor check penalty).");
+                RenderCheckbox(ref Main.ModSettings.EquipShieldWithoutProficiency, "Equip shields without shield proficiency (Penalty based on armor check penalty).");
+                RenderCheckbox(ref Main.ModSettings.FixShieldBashDamage, "Fix shield bash damage.");
+
                 RenderLabel("NOTE: Must restart game after making changes.");
             }
             catch (Exception e) {

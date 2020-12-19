@@ -105,7 +105,9 @@
   <ItemGroup>
     <Compile Include="ActivatableAbility\RapidShot.cs" />
     <Compile Include="ActivatableAbility\ShieldBash.cs" />
+    <Compile Include="ActivatableAbility\TwoHand.cs" />
     <Compile Include="Buff\RapidShotBuff.cs" />
+    <Compile Include="Buff\TwoHandBuff.cs" />
     <Compile Include="CategoryDefaults\DefaultsForWeaponCategories.cs" />
     <Compile Include="CustomGuids.cs" />
     <Compile Include="EquipmentEnchantment\BashingEnchantment.cs" />
@@ -113,6 +115,7 @@
     <Compile Include="EquipmentEnchantment\ImpactEnchantment.cs" />
     <Compile Include="EquipmentEnchantment\IrongripEnchantment.cs" />
     <Compile Include="ExistingGuids.cs" />
+    <Compile Include="FactLogic\TwoHandFeature.cs" />
     <Compile Include="FactLogic\WeaponTrainingAddProficiencies.cs" />
     <Compile Include="Feature\CombatCompetence.cs" />
     <Compile Include="Feature\ImprovedShieldBash.cs" />
@@ -149,6 +152,7 @@
     <Compile Include="Mechanics\TwoWeaponFighting.cs" />
     <Compile Include="Patches\BlueprintItemShield.cs" />
     <Compile Include="Patches\BlueprintWeaponType.cs" />
+    <Compile Include="Patches\CharSAttack.cs" />
     <Compile Include="Patches\EquipSlot.cs" />
     <Compile Include="Patches\HandSlot.cs" />
     <Compile Include="Patches\ItemEntity.cs" />

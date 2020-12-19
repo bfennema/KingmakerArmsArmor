@@ -49,5 +49,15 @@ namespace ArmsArmor
                 }
             }
         }
+
+        [HarmonyLib.HarmonyPatch(typeof(ItemEntityWeapon), "HoldInTwoHands", HarmonyLib.MethodType.Getter)]
+        private static class ItemEntityWeaponHoldInTwoHandsPatch {
+            private static void Postfix(ItemEntityWeapon __instance, ref bool __result) {
+                if (__result == true && !IsTwoHanded(__instance)
+                    && __instance.Wielder != null && !__instance.Wielder.Get<UnitPartTwoHand>().TwoHand) {
+                    __result = false;
+                }
+            }
+        }
     }
 }

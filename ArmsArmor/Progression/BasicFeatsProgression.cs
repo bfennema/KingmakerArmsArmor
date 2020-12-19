@@ -13,6 +13,7 @@ namespace ArmsArmor
 			var mechanics = new BlueprintFeature[] {
 				NonProficiencyAttackPenaltyBasicMechanics.GetBlueprint(),
 				ShieldBashBasicMechanics.GetBlueprint(),
+				TwoHandBasicMechanics.GetBlueprint(),
 			};
 
 			if (unit == null) {

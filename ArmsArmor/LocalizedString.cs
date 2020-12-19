@@ -35,6 +35,8 @@ namespace ArmsArmor
             AddString(StringGuids.ImprovedShieldBashDescription, "When you perform a shield bash, you may still apply the shield’s shield bonus to your AC.");
             AddString(StringGuids.SpikedLightShieldBashingPlus1, "Bashing Spiked Light Shield +1");
             AddString(StringGuids.SpikedHeavyShieldBashingPlus1, "Bashing Spiked Heavy Shield +1");
+            AddString(StringGuids.TwoHand, "Two Hand");
+            AddString(StringGuids.TwoHandDescription, "Wield a one-handed weapon with two hands.\nWhen a one-handed weapon is wielded with two hands during melee combat, 1-1/2 times the character’s Strength bonus is added to damage rolls.\nRapiers cannot be wielded with two hands.");
         }
     }
     class StringGuids {
@@ -57,6 +59,8 @@ namespace ArmsArmor
         public const string ImprovedShieldBashDescription = "52c3d9be-01fb-4b18-9f8f-bb5d8dced144";
         public const string SpikedLightShieldBashingPlus1 = "1ef7f90c-99ed-4408-9532-139b9219c062";
         public const string SpikedHeavyShieldBashingPlus1 = "1ba0e914-346f-4944-b23b-d855333f1554";
+        public const string TwoHand = "88c2882c-452e-4549-b8fb-272a070098a6";
+        public const string TwoHandDescription = "6c38be03-d665-49d2-b473-71167d2f8c40";
 
         public const string ShieldBashFeature = "314ff56d-e93b-4915-8ca4-24a7670ad436";
         public const string SpikedLightShield = "7aa87bff-84b7-4337-9ad2-c1f6268fae0e";

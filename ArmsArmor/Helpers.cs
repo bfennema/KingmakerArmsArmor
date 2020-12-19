@@ -12,6 +12,7 @@ using Kingmaker.Localization;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UI.ServiceWindow;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.Utility;
 using Kingmaker.Visual.CharacterSystem;
 using UnityEngine;
@@ -201,6 +202,12 @@ namespace ArmsArmor
 
         static public readonly HarmonyLib.AccessTools.FieldRef<BlueprintItemEnchantment, int> BlueprintItemEnchantmentIdentifyDC =
             HarmonyLib.AccessTools.FieldRefAccess<BlueprintItemEnchantment, int>("m_IdentifyDC");
+
+
+        // BlueprintBuff
+        static public void SetBlueprintBuffFlags(BlueprintBuff buff, int flags) {
+            HarmonyLib.AccessTools.Field(typeof(BlueprintBuff), "m_Flags").SetValue(buff, flags);
+        }
 
 
         // EquipSlot

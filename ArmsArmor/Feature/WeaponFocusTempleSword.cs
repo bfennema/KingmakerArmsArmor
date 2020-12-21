@@ -18,11 +18,11 @@ namespace ArmsArmor
 				blueprint.Groups = Array.Empty<FeatureGroup>();
 				blueprint.Ranks = 1;
 				blueprint.IsClassFeature = true;
-				Helpers.BlueprintUnitFactDisplayName(blueprint) = LocalizedStringHelper.GetLocalizedString("c641bed7-07d1-4fd0-899B-6d9a3d65d712");
-				Helpers.BlueprintUnitFactDescription(blueprint) = LocalizedStringHelper.GetLocalizedString("6fcbb42e-ab9c-475b-bfa5-7330d6331810");
-				CopyFromBlueprint(blueprint, "3d980f3962b79384eb9aa602cffeef2c");
+				Helpers.BlueprintUnitFactDisplayName(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.WeaponFocusTempleSword);
+				Helpers.BlueprintUnitFactDescription(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.WeaponFocusTempleSwordDescription);
+				CopyFromBlueprint(blueprint, ExistingGuids.WeaponFocusLightCrossbow);
 				blueprint.ComponentsArray = new BlueprintComponent[] { component };
-				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = "0d9ab546885b4159bf290aae2b187177";
+				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = CustomGuids.WeaponFocusTempleSword;
 				blueprint.name = "WeaponFocusTempleSword";
 				ResourcesLibrary.LibraryObject.BlueprintsByAssetId?.Add(blueprint.AssetGuid, blueprint);
 				ResourcesLibrary.LibraryObject.GetAllBlueprints()?.Add(blueprint);

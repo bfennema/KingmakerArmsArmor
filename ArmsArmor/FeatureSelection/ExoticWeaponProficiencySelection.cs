@@ -6,9 +6,8 @@ using Kingmaker.Blueprints.Classes.Selection;
 namespace ArmsArmor
 {
 	public class ExoticWeaponProficiencySelection {
-		static readonly string guid = "9a01b6815d6c3684cb25f30b8bf20932";
 		static public void Init() {
-			var blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintFeatureSelection>(guid);
+			var blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintFeatureSelection>(ExistingGuids.ExoticWeaponProficiencySelection);
 			var features = blueprint.AllFeatures.ToList();
 			features.Add(TempleSwordProficiency.GetBlueprint());
 			blueprint.AllFeatures = features.ToArray();

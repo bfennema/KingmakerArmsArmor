@@ -7,28 +7,31 @@ using UnityEngine;
 
 namespace ArmsArmor
 {
-	public class SpikedHeavyShieldArmorItem {
+	public class SpikedLightShieldBashingPlus1ArmorItem {
 		static BlueprintItemArmor blueprint = null;
 
 		static public BlueprintItemArmor GetBlueprint() {
 			if (!blueprint) {
 				blueprint = ScriptableObject.CreateInstance<BlueprintItemArmor>();
-				Helpers.BlueprintItemArmorType(blueprint) = ResourcesLibrary.TryGetBlueprint<BlueprintArmorType>(ExistingGuids.HeavyShieldType);
+				Helpers.BlueprintItemArmorType(blueprint) = ResourcesLibrary.TryGetBlueprint<BlueprintArmorType>(ExistingGuids.LightShieldType);
 				Helpers.BlueprintItemArmorSize(blueprint) = Size.Medium;
-				Helpers.BlueprintItemArmorEnchantments(blueprint) = new BlueprintArmorEnchantment[0];
+				Helpers.BlueprintItemArmorEnchantments(blueprint) = new BlueprintArmorEnchantment[] {
+					ResourcesLibrary.TryGetBlueprint<BlueprintArmorEnchantment>(ExistingGuids.ShieldEnhancementBonus1),
+					BashingEnchantment.GetBlueprint()
+				};
 				Helpers.BlueprintItemArmorVisualParameters(blueprint) = new ArmorVisualParameters();
-				Helpers.BlueprintItemDisplayNameText(blueprint) = new LocalizedString();
+				Helpers.BlueprintItemDisplayNameText(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.SpikedLightShieldBashingPlus1);
 				Helpers.BlueprintItemDescriptionText(blueprint) = new LocalizedString();
 				Helpers.BlueprintItemFlavorText(blueprint) = new LocalizedString();
-				Helpers.BlueprintItemNonIdentifiedNameText(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.SpikedHeavyShield);
+				Helpers.BlueprintItemNonIdentifiedNameText(blueprint) = new LocalizedString();
 				Helpers.BlueprintItemNonIdentifiedDescriptionText(blueprint) = new LocalizedString();
-				Helpers.BlueprintItemCost(blueprint) = 30;
-				Helpers.BlueprintItemWeight(blueprint) = 20.0f;
+				Helpers.BlueprintItemCost(blueprint) = 20;
+				Helpers.BlueprintItemWeight(blueprint) = 11.0f;
 				Helpers.BlueprintItemInventoryPutSound(blueprint) = "ShieldPut";
 				Helpers.BlueprintItemInventoryTakeSound(blueprint) = "ShieldTake";
 				blueprint.ComponentsArray = null;
-				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = CustomGuids.SpikedHeavyShieldArmorItem;
-				blueprint.name = "SpikedHeavyShieldArmorItem";
+				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = CustomGuids.SpikedLightShieldBashingPlus1ArmorItem;
+				blueprint.name = "SpikedLightShieldBashingPlus1ArmorItem";
 				ResourcesLibrary.LibraryObject.BlueprintsByAssetId?.Add(blueprint.AssetGuid, blueprint);
 				ResourcesLibrary.LibraryObject.GetAllBlueprints()?.Add(blueprint);
 			}

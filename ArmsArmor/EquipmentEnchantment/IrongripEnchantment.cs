@@ -7,19 +7,18 @@ using UnityEngine;
 namespace ArmsArmor
 {
 	public class IrongripEnchantment {
-		static readonly string guid = "db07984caaaf42c6bdeddf555e0d9b71";
 		static BlueprintEquipmentEnchantment blueprint = null;
 
 		static public BlueprintEquipmentEnchantment GetBlueprint() {
 			if (!blueprint) {
 				blueprint = ScriptableObject.CreateInstance<BlueprintEquipmentEnchantment>();
-				Helpers.BlueprintItemEnchantmentEnchantName(blueprint) = LocalizedStringHelper.GetLocalizedString("2845c74a-a0aa-473b-87f0-7eedc71f6786");
+				Helpers.BlueprintItemEnchantmentEnchantName(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.IrongripEnchantment);
 				Helpers.BlueprintItemEnchantmentDescription(blueprint) = new LocalizedString();
 				Helpers.BlueprintItemEnchantmentPrefix(blueprint) = new LocalizedString();
 				Helpers.BlueprintItemEnchantmentSuffix(blueprint) = new LocalizedString();
 				Helpers.BlueprintItemEnchantmentIdentifyDC(blueprint) = 5;
 				blueprint.ComponentsArray = new BlueprintComponent[] { GetComponent() };
-				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = guid;
+				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = CustomGuids.IrongripEnchantment;
 				blueprint.name = "IrongripEnchantment";
 				ResourcesLibrary.LibraryObject.BlueprintsByAssetId?.Add(blueprint.AssetGuid, blueprint);
 				ResourcesLibrary.LibraryObject.GetAllBlueprints()?.Add(blueprint);

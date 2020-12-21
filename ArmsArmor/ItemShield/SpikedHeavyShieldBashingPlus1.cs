@@ -6,16 +6,16 @@ using UnityEngine;
 
 namespace ArmsArmor
 {
-	public class SpikedHeavyShield {
+	public class SpikedHeavyShieldBashingPlus1 {
 		static BlueprintItemShield blueprint = null;
 
 		static public BlueprintItemShield GetBlueprint() {
 			if (!blueprint) {
 				blueprint = ScriptableObject.CreateInstance<BlueprintItemShield>();
-				Helpers.BlueprintItemShieldArmorComponent(blueprint) = SpikedHeavyShieldArmorItem.GetBlueprint();
+				Helpers.BlueprintItemShieldArmorComponent(blueprint) = SpikedHeavyShieldBashingPlus1ArmorItem.GetBlueprint();
 				Helpers.BlueprintItemShieldWeaponComponent(blueprint) = ResourcesLibrary.TryGetBlueprint<BlueprintItemWeapon>(ExistingGuids.StandardSpikedHeavyShield);
 				CopyFromBlueprint(blueprint, ExistingGuids.WildGuardianShieldItem);
-				Helpers.BlueprintItemDisplayNameText(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.SpikedHeavyShield);
+				Helpers.BlueprintItemDisplayNameText(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.SpikedHeavyShieldBashingPlus1);
 				Helpers.BlueprintItemDescriptionText(blueprint) = new LocalizedString();
 				Helpers.BlueprintItemFlavorText(blueprint) = new LocalizedString();
 				Helpers.BlueprintItemNonIdentifiedNameText(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.SpikedHeavyShield);
@@ -24,8 +24,8 @@ namespace ArmsArmor
 				Helpers.BlueprintItemInventoryPutSound(blueprint) = "ShieldPut";
 				Helpers.BlueprintItemInventoryTakeSound(blueprint) = "ShieldTake";
 				blueprint.ComponentsArray = null;
-				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = CustomGuids.SpikedHeavyShield;
-				blueprint.name = "SpikedHeavyShield";
+				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = CustomGuids.SpikedHeavyShieldBashingPlus1;
+				blueprint.name = "SpikedHeavyShieldBashingPlus1";
 				ResourcesLibrary.LibraryObject.BlueprintsByAssetId?.Add(blueprint.AssetGuid, blueprint);
 				ResourcesLibrary.LibraryObject.GetAllBlueprints()?.Add(blueprint);
 			}

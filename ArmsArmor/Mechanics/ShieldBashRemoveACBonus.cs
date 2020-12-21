@@ -16,7 +16,7 @@ namespace ArmsArmor
 	[ComponentName("Basic Mechanics proficiency")]
 	[AllowedOn(typeof(BlueprintFeature))]
 	public class ShieldBashRemoveACBonus : RuleInitiatorLogicComponent<RuleAttackWithWeapon>, ITargetRulebookHandler<RuleCalculateAC>, IRulebookHandler<RuleCalculateAC> {
-		static BlueprintFeature improvedShieldBashFeature = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("121811173a614534e8720d7550aae253");
+		static BlueprintFeature improvedShieldBashFeature = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>(ExistingGuids.ShieldBashFeature);
 		private bool attacked;
 		public override void OnEventAboutToTrigger(RuleAttackWithWeapon evt) {
 			if (evt.Initiator.CombatState.ExecutedAttackNumber == 0) {
@@ -40,7 +40,6 @@ namespace ArmsArmor
 			}
 		}
 
-		// Token: 0x06001508 RID: 5384 RVA: 0x0005EEA2 File Offset: 0x0005D2A2
 		public void OnEventDidTrigger(RuleCalculateAC evt) {
 		}
 
@@ -55,9 +54,7 @@ namespace ArmsArmor
 		}
 	}
 
-	public class ShieldBashBasicMechanics
-    {
-        static readonly string guid = "3175068c1ee64e12bfed885062f15bae";
+	public class ShieldBashBasicMechanics {
         static BlueprintFeature blueprint = null;
         static public BlueprintFeature GetBlueprint() {
             if (!blueprint) {
@@ -71,9 +68,9 @@ namespace ArmsArmor
 				var component2 = ScriptableObject.CreateInstance<ShieldBashRemoveACBonus>();
 				component2.name = "$ShieldBash$4d6ae1f0-a509-456c-85e6-57f7b8bd3d80";
 				blueprint.ComponentsArray = new BlueprintComponent[] { component1, component2 };
-				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = guid;
+				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = CustomGuids.ShieldBashBasicMechanics;
 				blueprint.name = "ShieldBashBasicMechanics";
-				Helpers.BlueprintUnitFactDisplayName(blueprint) = LocalizedStringHelper.GetLocalizedString("314ff56d-e93b-4915-8ca4-24a7670ad436");
+				Helpers.BlueprintUnitFactDisplayName(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.ShieldBashFeature);
 
 				ResourcesLibrary.LibraryObject.BlueprintsByAssetId?.Add(blueprint.AssetGuid, blueprint);
 				ResourcesLibrary.LibraryObject.GetAllBlueprints()?.Add(blueprint);

@@ -6,7 +6,6 @@ using UnityEngine;
 namespace ArmsArmor
 {
 	public class BashingWeaponEnchantment {
-		static readonly string guid = "94a2c4cbc5dd4e46b6182a7b8501373f";
 		static BlueprintWeaponEnchantment blueprint = null;
 
 		static public BlueprintWeaponEnchantment GetBlueprint() {
@@ -20,7 +19,7 @@ namespace ArmsArmor
 				var logic = ScriptableObject.CreateInstance<BashingWeaponLogic>();
 				logic.shieldMaster = ShieldMasterFeature.GetBlueprint();
 				blueprint.ComponentsArray = new BlueprintComponent[] { logic };
-				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = guid;
+				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = CustomGuids.BashingWeaponEnchantment;
 				blueprint.name = "BashingWeaponEnchantment";
 				ResourcesLibrary.LibraryObject.BlueprintsByAssetId?.Add(blueprint.AssetGuid, blueprint);
 				ResourcesLibrary.LibraryObject.GetAllBlueprints()?.Add(blueprint);

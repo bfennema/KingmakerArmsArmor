@@ -7,12 +7,11 @@ using UnityEngine;
 namespace ArmsArmor
 {
     public class RapidShotBuff {
-		static readonly string guid = "0f310c1e709e15e4fa693db15a4baeb4";
         static BlueprintBuff blueprint;
 
 		static private BlueprintBuff GetBlueprint() {
             if (!blueprint) {
-                blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintBuff>(guid);
+                blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintBuff>(ExistingGuids.RapidShotBuff);
                 for (int i = 0; i < blueprint.ComponentsArray.Length; i++) {
                     if (blueprint.ComponentsArray[i] is WeaponParametersAttackBonus component) {
                         var logic = ScriptableObject.CreateInstance<WeaponParametersAttackBonusLogic>();

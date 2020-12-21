@@ -7,7 +7,6 @@ using UnityEngine;
 namespace ArmsArmor
 {
 	public class ReduceOversizedPenalty {
-		static readonly string guid = "94d5c8963cd14cc8a4cc4e0189d02c29";
 		static BlueprintFeature blueprint = null;
 		static public BlueprintFeature GetBlueprint() {
 			if (!blueprint) {
@@ -18,7 +17,7 @@ namespace ArmsArmor
 				Helpers.BlueprintUnitFactDisplayName(blueprint) = new LocalizedString();
 				Helpers.BlueprintUnitFactDescription(blueprint) = new LocalizedString();
 				blueprint.ComponentsArray = new BlueprintComponent[] { GetComponent() };
-				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = guid;
+				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = CustomGuids.ReduceOversizedPenalty;
 				blueprint.name = "ReduceOversizedPenalty";
 				ResourcesLibrary.LibraryObject.BlueprintsByAssetId?.Add(blueprint.AssetGuid, blueprint);
 				ResourcesLibrary.LibraryObject.GetAllBlueprints()?.Add(blueprint);

@@ -43,7 +43,8 @@ namespace ArmsArmor
                     StandardTempleSword.Init();
                     SpikedLightShield.Init();
                     SpikedHeavyShield.Init();
-                    SpikedHeavyShieldBashing.Init();
+                    SpikedLightShieldBashingPlus1.Init();
+                    SpikedHeavyShieldBashingPlus1.Init();
                     LightShield.Init();
                     HeavyShield.Init();
                     IrongripGauntlets.Init();
@@ -54,11 +55,11 @@ namespace ArmsArmor
                     BashingShieldWeapon.Init();
                     BashingShieldArmor.Init();
                     ShieldMasterFeature.Init();
-                    TwoWeaponFightingAttackPenaltyPatch.Init();
                     TwoWeaponFightingBasicMechanics.Init();
                     ImprovedShieldBash.Init();
                     ShieldBashAbility.Init();
                     RapidShotAbility.Init();
+                    DefaultsForWeaponCategories.Init();
 #if !PATCH21
                     RapidShotBuff.Init();
 #endif

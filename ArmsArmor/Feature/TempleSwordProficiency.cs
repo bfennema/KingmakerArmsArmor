@@ -1,6 +1,7 @@
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
+using Kingmaker.Blueprints.Items;
 using Kingmaker.Blueprints.Items.Armors;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.FactLogic;
@@ -9,7 +10,6 @@ using UnityEngine;
 namespace ArmsArmor
 {
 	public class TempleSwordProficiency {
-		static readonly string guid = "ec367525bd9a45b0be493a8c17ba7487";
 		static BlueprintFeature blueprint = null;
 		static public BlueprintFeature GetBlueprint() {
 			if (!blueprint) {
@@ -23,15 +23,20 @@ namespace ArmsArmor
 				prerequisiteNotProficient.WeaponProficiencies = new WeaponCategory[] { TempleSword.WeaponCategoryTempleSword };
 				prerequisiteNotProficient.name = "$PrerequisiteNotProficient$2b3a5ff8-2195-44f9-b1d5-5905b69a9d81";
 
+				var addStartingEquipment = ScriptableObject.CreateInstance<AddStartingEquipment>();
+				addStartingEquipment.BasicItems = new BlueprintItem[0];
+				addStartingEquipment.CategoryItems = new WeaponCategory[] { TempleSword.WeaponCategoryTempleSword };
+				addStartingEquipment.name = "$AddStartingEquipment$f1d926b7-c5bf-40d9-9ade-2dd735b13e0c";
+
 				blueprint = ScriptableObject.CreateInstance<BlueprintFeature>();
 				blueprint.Groups = new FeatureGroup[] { FeatureGroup.ExoticWeaponProficiency };
 				blueprint.Ranks = 1;
 				blueprint.IsClassFeature = true;
-				Helpers.BlueprintUnitFactDisplayName(blueprint) = LocalizedStringHelper.GetLocalizedString("4fa06299-19dd-48c2-bab6-de38d54fd587");
-				Helpers.BlueprintUnitFactDescription(blueprint) = LocalizedStringHelper.GetLocalizedString("b0aa76ca-bc8e-4cde-9f30-16e0d3953732");
-				CopyFromBlueprint(blueprint, "097c1ceaf18f9a045b5969bad82b1fa4");
-				blueprint.ComponentsArray = new BlueprintComponent[] { addProficiencies, prerequisiteNotProficient };
-				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = guid;
+				Helpers.BlueprintUnitFactDisplayName(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.TempleSwordProficiency);
+				Helpers.BlueprintUnitFactDescription(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.TempleSwordProficiencyDescription);
+				CopyFromBlueprint(blueprint, ExistingGuids.NunchakuProficiency);
+				blueprint.ComponentsArray = new BlueprintComponent[] { addProficiencies, prerequisiteNotProficient, addStartingEquipment };
+				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = CustomGuids.TempleSwordProficiency;
 				blueprint.name = "TempleSwordProficiency";
 				ResourcesLibrary.LibraryObject.BlueprintsByAssetId?.Add(blueprint.AssetGuid, blueprint);
 				ResourcesLibrary.LibraryObject.GetAllBlueprints()?.Add(blueprint);

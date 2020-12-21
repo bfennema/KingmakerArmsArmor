@@ -13,7 +13,7 @@ namespace ArmsArmor
     public class TwoWeaponFightingAttackPenaltyPatch {
         [HarmonyLib.HarmonyPatch(typeof(TwoWeaponFightingAttackPenalty), "OnEventAboutToTrigger", new Type[] { typeof(RuleCalculateAttackBonusWithoutTarget) })]
         private static class TwoWeaponFightingAttackPenaltyOnEventAboutToTriggerPatch {
-            static public BlueprintFeature ShieldMaster;
+            static BlueprintFeature shieldMaster = null;
             static MethodInfo methodToFind;
             private static bool Prepare() {
                 try {
@@ -55,17 +55,17 @@ namespace ArmsArmor
             }
 
             private static bool CheckShieldMaster(TwoWeaponFightingAttackPenalty component, RuleCalculateAttackBonusWithoutTarget evt) {
+                if (!shieldMaster) {
+                    shieldMaster = ShieldMasterFeature.GetBlueprint();
+                }
                 ItemEntityWeapon maybeWeapon2 = evt.Initiator.Body.SecondaryHand.MaybeWeapon;
 #if !PATCH21
                     RuleAttackWithWeapon ruleAttackWithWeapon = evt.Reason.Rule as RuleAttackWithWeapon;
                     if (ruleAttackWithWeapon != null && !ruleAttackWithWeapon.IsFullAttack)
                         return true;
 #endif
-                return maybeWeapon2 != null && evt.Weapon == maybeWeapon2 && maybeWeapon2.IsShield && component.Owner.Progression.Features.HasFact(ShieldMaster);
+                return maybeWeapon2 != null && evt.Weapon == maybeWeapon2 && maybeWeapon2.IsShield && component.Owner.Progression.Features.HasFact(shieldMaster);
             }
-        }
-        static public void Init() {
-            TwoWeaponFightingAttackPenaltyOnEventAboutToTriggerPatch.ShieldMaster = ShieldMasterFeature.GetBlueprint();
         }
     }
 }

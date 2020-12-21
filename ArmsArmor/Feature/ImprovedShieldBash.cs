@@ -8,12 +8,11 @@ namespace ArmsArmor
 {
     public class ImprovedShieldBash
     {
-        static readonly string guid = "121811173a614534e8720d7550aae253";
         static BlueprintFeature blueprint = null;
         static private BlueprintFeature GetBlueprint() {
             if (!blueprint) {
-                blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>(guid);
-                var shieldBashAbility = ResourcesLibrary.TryGetBlueprint<BlueprintActivatableAbility>("3bb6b76ed5b38ab4f957c7f923c23b68");
+                blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>(ExistingGuids.ShieldBashFeature);
+                var shieldBashAbility = ResourcesLibrary.TryGetBlueprint<BlueprintActivatableAbility>(ExistingGuids.ShieldBashAbility);
                 for (int i = 0; i < blueprint.ComponentsArray.Length; i++) {
                     if (blueprint.ComponentsArray[i] is AddFacts component) {
                         if (component.Facts.Contains(shieldBashAbility)) {
@@ -24,7 +23,8 @@ namespace ArmsArmor
                         break;
                     }
                 }
-                Helpers.BlueprintUnitFactDisplayName(blueprint) = LocalizedStringHelper.GetLocalizedString("1d8c4846-774f-41d5-b5ec-17eac2651722");
+                Helpers.BlueprintUnitFactDisplayName(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.ImprovedShieldBash);
+                Helpers.BlueprintUnitFactDescription(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.ImprovedShieldBashDescription);
                 blueprint.name = "ImprovedShieldBashFeature";
             }
             return blueprint;

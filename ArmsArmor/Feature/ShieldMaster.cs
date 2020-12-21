@@ -7,11 +7,10 @@ namespace ArmsArmor
 {
     public class ShieldMasterFeature
     {
-        static readonly string guid = "dbec636d84482944f87435bd31522fcc";
         static BlueprintFeature blueprint = null;
         static public BlueprintFeature GetBlueprint() {
             if (!blueprint) {
-                blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>(guid);
+                blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>(ExistingGuids.ShieldMaster);
                 for (int i = 0; i < blueprint.ComponentsArray.Length; i++) {
                     if (blueprint.ComponentsArray[i] is ShieldMaster component) {
                         var logic = ScriptableObject.CreateInstance<ShieldMasterLogic>();

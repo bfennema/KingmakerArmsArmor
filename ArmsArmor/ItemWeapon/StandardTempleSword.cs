@@ -10,7 +10,6 @@ using UnityEngine;
 namespace ArmsArmor
 {
 	public class StandardTempleSword {
-		static readonly string guid = "e21f428f9fc640f3b2a44ea8c0c2bd6b";
 		static BlueprintItemWeapon blueprint = null;
 
 		static public BlueprintItemWeapon GetBlueprint() {
@@ -20,7 +19,7 @@ namespace ArmsArmor
 				Helpers.BlueprintItemWeaponSize(blueprint) = Size.Medium;
 				Helpers.BlueprintItemWeaponEnchantments(blueprint) = Array.Empty<BlueprintWeaponEnchantment>();
 				Helpers.BlueprintItemWeaponDamageType(blueprint) = new DamageTypeDescription { Type = DamageType.Physical };
-				CopyFromBlueprint(blueprint, "bfe24b51e4d943a42b0976aaee7e1b7c");
+				CopyFromBlueprint(blueprint, ExistingGuids.StandardSickle);
 				Helpers.BlueprintItemDisplayNameText(blueprint) = new LocalizedString();
 				Helpers.BlueprintItemDescriptionText(blueprint) = new LocalizedString();
 				Helpers.BlueprintItemFlavorText(blueprint) = new LocalizedString();
@@ -28,7 +27,7 @@ namespace ArmsArmor
 				Helpers.BlueprintItemNonIdentifiedDescriptionText(blueprint) = new LocalizedString();
 				Helpers.BlueprintItemCost(blueprint) = 30;
 				blueprint.ComponentsArray = null;
-				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = guid;
+				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = CustomGuids.StandardTempleSword;
 				blueprint.name = "StandardTempleSword";
 				ResourcesLibrary.LibraryObject.BlueprintsByAssetId?.Add(blueprint.AssetGuid, blueprint);
 				ResourcesLibrary.LibraryObject.GetAllBlueprints()?.Add(blueprint);

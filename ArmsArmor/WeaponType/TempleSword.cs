@@ -20,19 +20,18 @@ using UnityEngine;
 namespace ArmsArmor
 {
 	public class TempleSword {
-		static readonly string guid = "ac6146fda25146e8b0f181cbdd8ae34d";
 		static BlueprintWeaponType blueprint = null;
 		static readonly public WeaponCategory WeaponCategoryTempleSword = WeaponCategory.ThrowingAxe + 1;
 
 		static public BlueprintWeaponType GetBlueprint() {
 			if (!blueprint) {
 				blueprint = ScriptableObject.CreateInstance<BlueprintWeaponType>();
-				Helpers.BlueprintWeaponTypeTypeNameText(blueprint) = LocalizedStringHelper.GetLocalizedString("5f26093f-af20-4c9f-99f3-b05f857f82bb");
-				Helpers.BlueprintWeaponTypeDefaultNameText(blueprint) = LocalizedStringHelper.GetLocalizedString("5f26093f-af20-4c9f-99f3-b05f857f82bb");
+				Helpers.BlueprintWeaponTypeTypeNameText(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.TempleSword);
+				Helpers.BlueprintWeaponTypeDefaultNameText(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.TempleSword);
 				Helpers.BlueprintWeaponTypeDescriptionText(blueprint) = new LocalizedString();
 				Helpers.BlueprintWeaponTypeMasterworkDescriptionText(blueprint) = new LocalizedString();
 				Helpers.BlueprintWeaponTypeMagicDescriptionText(blueprint) = new LocalizedString();
-				CopyFromBlueprint(blueprint, "ec2da496c7936e14c9a28ce616a6b4cd");
+				CopyFromBlueprint(blueprint, ExistingGuids.Sickle);
 				Helpers.BlueprintWeaponTypeAttackRange(blueprint) = 5.Feet();
 				Helpers.BlueprintWeaponTypeBaseDamage(blueprint) = new DiceFormula(1, DiceType.D8);
 				Helpers.BlueprintWeaponTypeDamageType(blueprint) = new DamageTypeDescription { Type = DamageType.Physical };
@@ -45,7 +44,7 @@ namespace ArmsArmor
 				blueprint.Category = WeaponCategoryTempleSword;
 				Helpers.BlueprintWeaponTypeEnchantments(blueprint) = new BlueprintWeaponEnchantment[0];
 				blueprint.ComponentsArray = null;
-				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = guid;
+				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = CustomGuids.TempleSword;
 				blueprint.name = "TempleSword";
 				ResourcesLibrary.LibraryObject.BlueprintsByAssetId?.Add(blueprint.AssetGuid, blueprint);
 				ResourcesLibrary.LibraryObject.GetAllBlueprints()?.Add(blueprint);
@@ -69,7 +68,7 @@ namespace ArmsArmor
 
 		static public void Init() {
 			GetBlueprint();
-			WeaponEntry entry = new WeaponEntry { Proficiency = WeaponCategoryTempleSword, Text = LocalizedStringHelper.GetLocalizedString("5f26093f-af20-4c9f-99f3-b05f857f82bb") };
+			WeaponEntry entry = new WeaponEntry { Proficiency = WeaponCategoryTempleSword, Text = LocalizedStringHelper.GetLocalizedString(StringGuids.TempleSword) };
 			var entries = LocalizedTexts.Instance.Stats.WeaponEntries.ToList();
 			entries.Add(entry);
 			LocalizedTexts.Instance.Stats.WeaponEntries = entries.ToArray();
@@ -147,7 +146,7 @@ namespace ArmsArmor
 		[HarmonyLib.HarmonyPatch(typeof(UnitViewHandSlotData), "OwnerWeaponScale", HarmonyLib.MethodType.Getter)]
 		private static class UnitViewHandSlotDataWeaponScalePatch {
 			private static void Postfix(UnitViewHandSlotData __instance, ref float __result) {
-				if (__instance.VisibleItem is ItemEntityWeapon weapon && weapon.Blueprint.Type.AssetGuid == guid) {
+				if (__instance.VisibleItem is ItemEntityWeapon weapon && weapon.Blueprint.Type.AssetGuid == CustomGuids.TempleSword) {
 					__result *= 4.0f / 3.0f;
 				}
 			}

@@ -13,7 +13,7 @@ namespace ArmsArmor
 	[ComponentName("Basic Mechanics proficiency")]
 	[AllowedOn(typeof(BlueprintUnitFact))]
 	public class NonProficiencyAttackPenalty : RuleInitiatorLogicComponent<RuleCalculateAttackBonusWithoutTarget> {
-		static BlueprintFeature martialWeaponProficiencyFeature = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>("203992ef5b35c864390b4e4a1e200629");
+		static BlueprintFeature martialWeaponProficiencyFeature = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>(ExistingGuids.MartialWeaponProficiencyFeature);
 		public override void OnEventAboutToTrigger(RuleCalculateAttackBonusWithoutTarget evt) {
 			ItemEntityWeapon maybeWeapon = evt.Initiator.Body.PrimaryHand.MaybeWeapon;
 			ItemEntityWeapon maybeWeapon2 = evt.Initiator.Body.SecondaryHand.MaybeWeapon;
@@ -40,9 +40,7 @@ namespace ArmsArmor
 		}
 	}
 
-	public class NonProficiencyAttackPenaltyBasicMechanics
-	{
-		static readonly string guid = "cba13eb341a44bb2ae7742b7fe0f0a1f";
+	public class NonProficiencyAttackPenaltyBasicMechanics {
 		static BlueprintFeature blueprint = null;
 
 		static public BlueprintFeature GetBlueprint() {
@@ -54,9 +52,9 @@ namespace ArmsArmor
 				var component = ScriptableObject.CreateInstance<NonProficiencyAttackPenalty>();
 				component.name = "$NonProficiencyAttackPenalty$b74b4b86-9c23-4988-9e2c-7033aac18cbe";
 				blueprint.ComponentsArray = new BlueprintComponent[] { component };
-				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = guid;
+				Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = CustomGuids.NonProficiencyAttackPenaltyBasicMechanics;
 				blueprint.name = "NonProficiencyAttackPenaltyBasicMechanics";
-				Helpers.BlueprintUnitFactDisplayName(blueprint) = LocalizedStringHelper.GetLocalizedString("969f5b6f-00f6-48d8-bc06-b8a852d63bfd");
+				Helpers.BlueprintUnitFactDisplayName(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.NonProficiencyPenalty);
 
 				ResourcesLibrary.LibraryObject.BlueprintsByAssetId?.Add(blueprint.AssetGuid, blueprint);
 				ResourcesLibrary.LibraryObject.GetAllBlueprints()?.Add(blueprint);

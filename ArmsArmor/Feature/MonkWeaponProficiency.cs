@@ -6,11 +6,10 @@ using Kingmaker.UnitLogic.FactLogic;
 namespace ArmsArmor
 {
 	public class MonkWeaponProficiency {
-		static readonly string guid = "c7d6f5244c617734a8a76b6785a752b4";
 		static BlueprintFeature blueprint = null;
 		static private BlueprintFeature GetBlueprint() {
 			if (!blueprint) {
-				blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>(guid);
+				blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>(ExistingGuids.MonkWeaponProficiency);
 				foreach (var entry in blueprint.ComponentsArray) {
 					if (entry is AddProficiencies addProficiencies) {
 						var proficiencies = addProficiencies.WeaponProficiencies.ToList();

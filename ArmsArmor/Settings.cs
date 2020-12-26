@@ -8,6 +8,7 @@ namespace ArmsArmor
         public bool EquipArmorWithoutProficiency = true;
         public bool EquipShieldWithoutProficiency = true;
         public bool FixShieldBashDamage = true;
+        public bool TempleSword = true;
 
         public override void Save(UnityModManager.ModEntry modEntry) {
             Save(this, modEntry);

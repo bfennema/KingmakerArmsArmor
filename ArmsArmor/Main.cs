@@ -37,10 +37,15 @@ namespace ArmsArmor
                 if (!__state) {
                     LocalizedStringHelper.Init();
                     BasicFeatsProgression.Init();
-                    ExoticWeaponProficiencySelection.Init();
                     WeaponTrainingSelection.Init();
-                    TempleSword.Init();
-                    StandardTempleSword.Init();
+                    if (ModSettings.TempleSword == true) {
+                        ExoticWeaponProficiencySelection.Init();
+                        TempleSword.Init();
+                        StandardTempleSword.Init();
+                        MonkWeaponProficiency.Init();
+                        DefaultsForWeaponCategories.Init();
+                        WeaponFocusTempleSword.Init();
+                    }
                     SpikedLightShield.Init();
                     SpikedHeavyShield.Init();
                     SpikedLightShieldBashingPlus1.Init();
@@ -48,7 +53,6 @@ namespace ArmsArmor
                     LightShield.Init();
                     HeavyShield.Init();
                     IrongripGauntlets.Init();
-                    MonkWeaponProficiency.Init();
                     BashingEnchantment.Init();
                     BashingWeaponEnchantment.Init();
                     ImpactEnchantment.Init();
@@ -59,7 +63,6 @@ namespace ArmsArmor
                     ImprovedShieldBash.Init();
                     ShieldBashAbility.Init();
                     RapidShotAbility.Init();
-                    DefaultsForWeaponCategories.Init();
 #if !PATCH21
                     RapidShotBuff.Init();
 #endif

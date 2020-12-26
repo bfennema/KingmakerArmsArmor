@@ -6,10 +6,10 @@ namespace ArmsArmor
 {
     class HandSlotPatch {
         static public bool IsTwoHanded(ItemEntityWeapon weapon, UnitDescriptor owner) {
-            if (weapon.Blueprint.IsTwoHanded
+            if ((weapon.Blueprint.IsTwoHanded && !Helpers.IsExoticTwoHandedMartialWeapon(weapon.Blueprint))
                 || weapon.Blueprint.Double
-                || (ItemEntityWeaponPatch.IsExoticTwoHandedMartialWeapon(weapon.Blueprint) 
-                    && !ItemEntityWeaponCanBeEquippedInternalReversePatch.CanBeEquippedInternal(weapon, owner))) {
+                || (Helpers.IsExoticTwoHandedMartialWeapon(weapon.Blueprint)
+                    && !owner.Proficiencies.Contains(weapon.Blueprint.Category))) {
                 return true;
             } else {
                 return false;
@@ -25,6 +25,8 @@ namespace ArmsArmor
                     return true;
                 }
             }
+
+            [HarmonyLib.HarmonyAfter(new string[] { "CallOfTheWild" })]
             private static bool Prefix(HandSlot __instance) {
                 if (__instance.IsPrimaryHand) {
                     var weapon = __instance.MaybeItem as ItemEntityWeapon;

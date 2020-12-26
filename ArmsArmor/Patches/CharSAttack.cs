@@ -3,6 +3,7 @@ using Kingmaker.Items;
 using Kingmaker.UI.Common;
 using Kingmaker.UI.ServiceWindow.CharacterScreen;
 using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.Parts;
 
 namespace ArmsArmor
 {
@@ -25,7 +26,8 @@ namespace ArmsArmor
                     if (__instance.AttackUI[0].ItemSlot.Item == __instance.AttackUI[1].ItemSlot.Item) {
                         ItemEntityWeapon itemEntityWeapon = attackData[0].Item as ItemEntityWeapon;
                         ItemEntityShield itemEntityShield = attackData[0].Item as ItemEntityShield;
-                        if (itemEntityWeapon != null && !ItemEntityWeaponPatch.IsTwoHanded(itemEntityWeapon) && !unit.Get<UnitPartTwoHand>().TwoHand) {
+                        if (itemEntityWeapon != null && !ItemEntityWeaponPatch.IsTwoHanded(itemEntityWeapon)
+                            && (!unit.Get<UnitPartTwoHand>().TwoHand || unit.Get<UnitPartMagus>().SpellCombat.Active)) {
                             __instance.AttackUI[1].SetIcon(null, 0f);
                         } else if (itemEntityShield != null && (itemEntityShield.WeaponComponent.Blueprint.IsLight || !unit.Get<UnitPartTwoHand>().TwoHand)) {
                             __instance.AttackUI[1].SetIcon(null, 0f);

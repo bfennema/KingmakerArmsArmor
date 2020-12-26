@@ -19,8 +19,8 @@ namespace ArmsArmor
 					return;
 				}
 				if (weapon != null) {
-                    if (ItemEntityWeaponPatch.IsExoticTwoHandedMartialWeapon(weapon.Blueprint)
-					    && !ItemEntityWeaponCanBeEquippedInternalReversePatch.CanBeEquippedInternal(weapon, weapon.Owner)) {
+                    if (Helpers.IsExoticTwoHandedMartialWeapon(weapon.Blueprint)
+                        && !weapon.Owner.Proficiencies.Contains(weapon.Blueprint.Category)) {
                         Color color = __instance.ItemImage.color;
                         color.a = 0.5f;
 						__instance.ItemImage.sprite = weapon.Blueprint.Icon;

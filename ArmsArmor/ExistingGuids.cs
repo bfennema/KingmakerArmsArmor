@@ -32,5 +32,6 @@
         public const string HeavyShieldType = "d1b05b901bab9524388ebfa0435902a6";
         public const string DefaultsForWeaponCategories = "567dc59213fd9664c8cb291643439714";
         public const string TwoWeaponFightingBasicMechanics = "6948b379c0562714d9f6d58ccbfa8faa";
+        public const string TowerShieldAttackPenalty = "f6b1f4378dd64044db145a1c2afa589f";
     }
 }

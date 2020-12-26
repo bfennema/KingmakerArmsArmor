@@ -2,6 +2,7 @@ using System;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Facts;
+using Kingmaker.Enums;
 using Kingmaker.Items;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
@@ -22,7 +23,9 @@ namespace ArmsArmor
 			}
 			if (base.Owner.IsPlayerFaction && !base.Owner.Body.IsPolymorphed
 				&& !base.Owner.Proficiencies.Contains(evt.Weapon.Blueprint.Category)
-				&& !(ItemEntityWeaponPatch.IsExoticTwoHandedMartialWeapon(evt.Weapon.Blueprint)
+				&& !(evt.Weapon.Blueprint.Category == WeaponCategory.DuelingSword
+					&& base.Owner.Proficiencies.Contains(WeaponCategory.Longsword))
+				&& !(Helpers.IsExoticTwoHandedMartialWeapon(evt.Weapon.Blueprint)
 					&& base.Owner.HasFact(martialWeaponProficiencyFeature)
 					&& evt.Weapon.HoldInTwoHands)) {
 				int penalty = -4;

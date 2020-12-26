@@ -86,6 +86,13 @@ namespace ArmsArmor
 
 		[HarmonyLib.HarmonyPatch(typeof(WeaponCategoryExtension), "HasSubCategory")]
 		private static class WeaponCategoryExtensionHasSubCategoryPatch {
+			private static bool Prepare() {
+				if (Main.ModSettings.TempleSword == false) {
+					return false;
+				} else {
+					return true;
+				}
+			}
 			private static void Postfix(WeaponCategory category, WeaponSubCategory subCategory, ref bool __result) {
 				if (category == WeaponCategory.ThrowingAxe + 1) {
 					if (GetSubCategories().HasItem(subCategory)) {
@@ -97,6 +104,13 @@ namespace ArmsArmor
 
 		[HarmonyLib.HarmonyPatch(typeof(WeaponCategoryExtension), "GetSubCategories")]
 		private static class WeaponCategoryExtensionGetSubCategoriesPatch {
+			private static bool Prepare() {
+				if (Main.ModSettings.TempleSword == false) {
+					return false;
+				} else {
+					return true;
+				}
+			}
 			private static void Postfix(WeaponCategory category, ref WeaponSubCategory[] __result) {
 				if (category == WeaponCategoryTempleSword) {
 					__result = GetSubCategories();
@@ -106,6 +120,13 @@ namespace ArmsArmor
 
 		[HarmonyLib.HarmonyPatch(typeof(Enum), "ToString", new Type[] { })]
 		private static class EnumToStringPatch {
+			private static bool Prepare() {
+				if (Main.ModSettings.TempleSword == false) {
+					return false;
+				} else {
+					return true;
+				}
+			}
 			private static bool Prefix(Enum __instance, ref string __result) {
 				if (__instance is WeaponCategory category) {
 					if (category == WeaponCategoryTempleSword) {
@@ -120,6 +141,13 @@ namespace ArmsArmor
 		//System.Type enumType, System.String value, System.Boolean ignoreCase, System.Enum+EnumResult& parseResult
 		[HarmonyLib.HarmonyPatch(typeof(Enum), "Parse", new Type[] { typeof(Type), typeof(string), typeof(bool) })]
 		private static class EnumParsePatch {
+			private static bool Prepare() {
+				if (Main.ModSettings.TempleSword == false) {
+					return false;
+				} else {
+					return true;
+				}
+			}
 			private static bool Prefix(Type enumType, string value, bool ignoreCase, ref object __result) {
 				if (enumType == typeof(WeaponCategory)) {
 					if (ignoreCase && value.ToLower() == "templesword" || !ignoreCase && value == "TempleSword") {
@@ -133,6 +161,13 @@ namespace ArmsArmor
 
 		[HarmonyLib.HarmonyPatch]
 		private static class EnumUtilsGetValuesWeaponCategoryPatch {
+			private static bool Prepare() {
+				if (Main.ModSettings.TempleSword == false) {
+					return false;
+				} else {
+					return true;
+				}
+			}
 			static MethodBase TargetMethod() {
 				return HarmonyLib.AccessTools.Method(typeof(EnumUtils), "GetValues").MakeGenericMethod(typeof(WeaponCategory));
 			}
@@ -145,6 +180,13 @@ namespace ArmsArmor
 
 		[HarmonyLib.HarmonyPatch(typeof(UnitViewHandSlotData), "OwnerWeaponScale", HarmonyLib.MethodType.Getter)]
 		private static class UnitViewHandSlotDataWeaponScalePatch {
+			private static bool Prepare() {
+				if (Main.ModSettings.TempleSword == false) {
+					return false;
+				} else {
+					return true;
+				}
+			}
 			private static void Postfix(UnitViewHandSlotData __instance, ref float __result) {
 				if (__instance.VisibleItem is ItemEntityWeapon weapon && weapon.Blueprint.Type.AssetGuid == CustomGuids.TempleSword) {
 					__result *= 4.0f / 3.0f;

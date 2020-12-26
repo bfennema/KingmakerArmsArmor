@@ -50,7 +50,7 @@ namespace ArmsArmor
             }
             private static void AddModifier(ItemEntityArmor armor, ModifiableValueSkill skill, int penalty) {
                 if (!towerShieldEnchantment) {
-                    towerShieldEnchantment = ResourcesLibrary.TryGetBlueprint<BlueprintArmorEnchantment>("f6b1f4378dd64044db145a1c2afa589f");
+                    towerShieldEnchantment = ResourcesLibrary.TryGetBlueprint<BlueprintArmorEnchantment>(ExistingGuids.TowerShieldAttackPenalty);
                 }
                 methodToInvoke.Invoke(armor, new object[] { skill, penalty });
                 if (armor.Wielder.IsPlayerFaction

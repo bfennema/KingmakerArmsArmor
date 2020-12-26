@@ -1,36 +1,16 @@
 using System;
-using Kingmaker.Blueprints.Items.Weapons;
-using Kingmaker.Enums;
 using Kingmaker.Items;
 using Kingmaker.UnitLogic;
 using static ArmsArmor.ItemEntityPatch;
 
 namespace ArmsArmor
 {
-    [HarmonyLib.HarmonyPatch]
-    public class ItemEntityWeaponCanBeEquippedInternalReversePatch
-    {
-        [HarmonyLib.HarmonyReversePatch]
-        [HarmonyLib.HarmonyPatch(typeof(ItemEntityWeapon), "CanBeEquippedInternal", new Type[] { typeof(UnitDescriptor) })]
-        public static bool CanBeEquippedInternal(ItemEntityWeapon __instance, UnitDescriptor owner) {
-            // its a stub so it has no initial content
-            throw new NotImplementedException("It's a stub");
-        }
-    }
-
     class ItemEntityWeaponPatch {
-        static public bool IsExoticTwoHandedMartialWeapon(BlueprintItemWeapon weapon) {
-            return weapon.Category == WeaponCategory.BastardSword
-                || weapon.Category == WeaponCategory.DwarvenWaraxe
-                || weapon.Category == WeaponCategory.Estoc
-                || weapon.Category == WeaponCategory.DuelingSword;
-        }
-
         static public bool IsTwoHanded(ItemEntityWeapon weapon) {
             var blueprint = weapon.Blueprint;
-            return blueprint.IsTwoHanded
-                || (IsExoticTwoHandedMartialWeapon(blueprint)
-                    && !ItemEntityWeaponCanBeEquippedInternalReversePatch.CanBeEquippedInternal(weapon, weapon.Owner));
+            return (blueprint.IsTwoHanded && !Helpers.IsExoticTwoHandedMartialWeapon(blueprint))
+                || (Helpers.IsExoticTwoHandedMartialWeapon(blueprint)
+                    && (weapon.Wielder == null || !weapon.Wielder.Proficiencies.Contains(weapon.Blueprint.Category)));
         }
 
         [HarmonyLib.HarmonyPatch(typeof(ItemEntityWeapon), "CanBeEquippedInternal", new Type[] { typeof(UnitDescriptor) })]
@@ -43,8 +23,7 @@ namespace ArmsArmor
                 }
             }
             private static void Postfix(ItemEntityWeapon __instance, UnitDescriptor owner, ref bool __result) {
-                var blueprint = __instance.Blueprint;
-                if (__result == false && !(IsExoticTwoHandedMartialWeapon(blueprint) && blueprint.IsTwoHanded)) {
+                if (__result == false) {
                     __result = ItemEntityCanBeEquippedInternalReversePatch.CanBeEquippedInternal(__instance, owner);
                 }
             }
@@ -52,6 +31,7 @@ namespace ArmsArmor
 
         [HarmonyLib.HarmonyPatch(typeof(ItemEntityWeapon), "HoldInTwoHands", HarmonyLib.MethodType.Getter)]
         private static class ItemEntityWeaponHoldInTwoHandsPatch {
+            [HarmonyLib.HarmonyAfter(new string[] { "CallOfTheWild" })]
             private static void Postfix(ItemEntityWeapon __instance, ref bool __result) {
                 if (__result == true && !IsTwoHanded(__instance)
                     && __instance.Wielder != null && !__instance.Wielder.Get<UnitPartTwoHand>().TwoHand) {

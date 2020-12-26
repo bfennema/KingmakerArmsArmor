@@ -138,6 +138,7 @@ namespace ArmsArmor
         // BlueprintItemShield
         static public readonly HarmonyLib.AccessTools.FieldRef<BlueprintItemShield, BlueprintItemWeapon> BlueprintItemShieldWeaponComponent =
             HarmonyLib.AccessTools.FieldRefAccess<BlueprintItemShield, BlueprintItemWeapon>("m_WeaponComponent");
+
         static public readonly HarmonyLib.AccessTools.FieldRef<BlueprintItemShield, BlueprintItemArmor> BlueprintItemShieldArmorComponent =
             HarmonyLib.AccessTools.FieldRefAccess<BlueprintItemShield, BlueprintItemArmor>("m_ArmorComponent");
 
@@ -213,5 +214,13 @@ namespace ArmsArmor
         // EquipSlot
         static public readonly HarmonyLib.AccessTools.FieldRef<EquipSlot, Image> EquipSlotTypeIcon =
             HarmonyLib.AccessTools.FieldRefAccess<EquipSlot, Image>("m_TypeIcon");
+
+
+        // Weapons that can be used two handed with martial weapon proficiency, or one handed with exotic
+        static public bool IsExoticTwoHandedMartialWeapon(BlueprintItemWeapon weapon) {
+            return weapon.Category == WeaponCategory.BastardSword
+                || weapon.Category == WeaponCategory.DwarvenWaraxe
+                || weapon.Category == WeaponCategory.Estoc;
+        }
     }
 }

@@ -19,6 +19,7 @@ namespace ArmsArmor
                 RenderCheckbox(ref Main.ModSettings.EquipArmorWithoutProficiency, "Equip armor without armor proficiency (Penalty based on armor check penalty).");
                 RenderCheckbox(ref Main.ModSettings.EquipShieldWithoutProficiency, "Equip shields without shield proficiency (Penalty based on armor check penalty).");
                 RenderCheckbox(ref Main.ModSettings.FixShieldBashDamage, "Fix shield bash damage.");
+                RenderCheckbox(ref Main.ModSettings.TempleSword, "Add Temple Sword.");
 
                 RenderLabel("NOTE: Must restart game after making changes.");
             }

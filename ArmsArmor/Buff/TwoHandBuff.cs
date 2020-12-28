@@ -16,6 +16,7 @@ namespace ArmsArmor
                 blueprint.IsClassFeature = true;
                 blueprint.FxOnStart = new PrefabLink();
                 blueprint.FxOnRemove = new PrefabLink();
+                blueprint.ResourceAssetIds = new string[0];
                 Helpers.BlueprintUnitFactDisplayName(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.TwoHand);
                 Helpers.BlueprintUnitFactDescription(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.TwoHandDescription);
                 CopyFromBlueprint(blueprint, ExistingGuids.WeaponSpecialization);
@@ -29,10 +30,8 @@ namespace ArmsArmor
             }
             return blueprint;
         }
-        static public void Init() {
-            GetBlueprint();
-        }
-        static public void CopyFromBlueprint(BlueprintBuff ability, string guid) {
+
+        static private void CopyFromBlueprint(BlueprintBuff ability, string guid) {
             var copyFromBlueprint = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>(guid);
             Helpers.BlueprintUnitFactIcon(ability) = copyFromBlueprint.Icon;
         }

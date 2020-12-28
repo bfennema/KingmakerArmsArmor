@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 using Kingmaker.Blueprints;
-using Kingmaker.UnitLogic;
+using Kingmaker.EntitySystem.Entities;
 using UnityModManagerNet;
 
 namespace ArmsArmor
@@ -70,10 +70,10 @@ namespace ArmsArmor
             }
         }
 
-        [HarmonyLib.HarmonyPatch(typeof(UnitDescriptor), "PostLoad")]
+        [HarmonyLib.HarmonyPatch(typeof(UnitEntityData), "PostLoad")]
         class UnitDescriptorPostLoadPatch {
-            static void Postfix(UnitDescriptor __instance) {
-                BasicFeatsProgression.Update(__instance);
+            static void Postfix(UnitEntityData __instance) {
+                BasicFeatsProgression.Update(__instance.Descriptor);
             }
         }
     }

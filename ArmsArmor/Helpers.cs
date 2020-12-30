@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.Blueprints.Items;
@@ -12,6 +14,7 @@ using Kingmaker.Localization;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UI.ServiceWindow;
+using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.Utility;
 using Kingmaker.Visual.CharacterSystem;
@@ -214,6 +217,16 @@ namespace ArmsArmor
         // EquipSlot
         static public readonly HarmonyLib.AccessTools.FieldRef<EquipSlot, Image> EquipSlotTypeIcon =
             HarmonyLib.AccessTools.FieldRefAccess<EquipSlot, Image>("m_TypeIcon");
+
+        // UnitDescriptor
+        static public readonly HarmonyLib.AccessTools.FieldRef<UnitDescriptor, UnitPartsManager> UnitDescriptorParts =
+            HarmonyLib.AccessTools.FieldRefAccess<UnitDescriptor, UnitPartsManager>("m_Parts");
+
+
+        // UnitPartsManager
+        static public readonly HarmonyLib.AccessTools.FieldRef<UnitPartsManager, Dictionary<Type, UnitPart>> UnitPartsManagerParts =
+            HarmonyLib.AccessTools.FieldRefAccess<UnitPartsManager, Dictionary<Type, UnitPart>>("m_Parts");
+
 
 
         // Weapons that can be used two handed with martial weapon proficiency, or one handed with exotic

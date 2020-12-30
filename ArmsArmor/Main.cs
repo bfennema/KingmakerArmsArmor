@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Reflection;
 using Kingmaker.Blueprints;
 using Kingmaker.EntitySystem.Entities;
@@ -9,6 +10,7 @@ namespace ArmsArmor
     public class Main {
         public static Settings ModSettings;
         public static UnityModManager.ModEntry ModEntry;
+        public static Assembly CallOfTheWild;
         private static HarmonyLib.Harmony harmonyInstance;
 
         static bool Load(UnityModManager.ModEntry modEntry) {
@@ -34,6 +36,8 @@ namespace ArmsArmor
                 __state = ___m_Initialized;
             }
             static void Postfix(bool __state) {
+                CallOfTheWild = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(a => a.GetName().Name == "CallOfTheWild");
+
                 if (!__state) {
                     LocalizedStringHelper.Init();
                     BasicFeatsProgression.Init();

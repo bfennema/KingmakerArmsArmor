@@ -14,20 +14,25 @@ namespace ArmsArmor
                     return true;
                 }
             }
+
             private static void Postfix(EquipSlot __instance, ItemEntityWeapon weapon) {
-				if (__instance.HasItem) {
-					return;
-				}
-				if (weapon != null) {
-                    if (Helpers.IsExoticTwoHandedMartialWeapon(weapon.Blueprint)
-                        && !weapon.Owner.Proficiencies.Contains(weapon.Blueprint.Category)) {
+                if (__instance.HasItem) {
+                    return;
+                }
+                if (weapon != null) {
+                    if (ItemEntityWeaponPatch.IsTwoHanded(weapon)) {
                         Color color = __instance.ItemImage.color;
                         color.a = 0.5f;
-						__instance.ItemImage.sprite = weapon.Blueprint.Icon;
+                        __instance.ItemImage.sprite = weapon.Blueprint.Icon;
                         Helpers.EquipSlotTypeIcon(__instance).gameObject.SetActive(false);
                         __instance.ItemImage.color = color;
+                    } else if (!weapon.Blueprint.Double) {
+                        Color color = __instance.ItemImage.color;
+                        color.a = 0f;
+                        Helpers.EquipSlotTypeIcon(__instance).gameObject.SetActive(true);
+                        __instance.ItemImage.color = color;
                     }
-				}
+                }
             }
         }
     }

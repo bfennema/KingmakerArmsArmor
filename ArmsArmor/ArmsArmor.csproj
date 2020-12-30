@@ -108,6 +108,7 @@
     <Compile Include="ActivatableAbility\TwoHand.cs" />
     <Compile Include="Buff\RapidShotBuff.cs" />
     <Compile Include="Buff\TwoHandBuff.cs" />
+    <Compile Include="CallOfTheWild.cs" />
     <Compile Include="CategoryDefaults\DefaultsForWeaponCategories.cs" />
     <Compile Include="CustomGuids.cs" />
     <Compile Include="EquipmentEnchantment\BashingEnchantment.cs" />

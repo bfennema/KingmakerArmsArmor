@@ -1,16 +1,16 @@
 using System;
-using System.Reflection;
 using Kingmaker.Items;
 using Kingmaker.UnitLogic;
 
 namespace ArmsArmor
 {
     class ItemEntityWeaponPatch {
-        static Type UnitPartCanHold2hWeaponIn1h = null;
-        static MethodInfo canBeUsedOn = null;
         static public bool IsTwoHanded(ItemEntityWeapon weapon, UnitDescriptor owner) {
-            return (weapon.Blueprint.IsTwoHanded && !Helpers.IsExoticTwoHandedMartialWeapon(weapon.Blueprint))
-                || (Helpers.IsExoticTwoHandedMartialWeapon(weapon.Blueprint) && !IsProficient(weapon, owner));
+            if (Helpers.IsExoticTwoHandedMartialWeapon(weapon.Blueprint)) {
+                return !IsProficient(weapon, owner);
+            } else {
+                return weapon.Blueprint.IsTwoHanded;
+            }
         }
 
         static public bool IsTwoHanded(ItemEntityWeapon weapon) {
@@ -18,14 +18,10 @@ namespace ArmsArmor
         }
 
         static public bool IsProficient(ItemEntityWeapon weapon, UnitDescriptor owner) {
-            if (Main.CallOfTheWild != null && UnitPartCanHold2hWeaponIn1h == null) {
-                UnitPartCanHold2hWeaponIn1h = Main.CallOfTheWild.GetType("CallOfTheWild.HoldingItemsMechanics.UnitPartCanHold2hWeaponIn1h");
-                canBeUsedOn = HarmonyLib.AccessTools.Method(UnitPartCanHold2hWeaponIn1h, "canBeUsedOn");
-            }
             if (owner != null) {
-                if (Main.CallOfTheWild != null) {
+                if (CallOfTheWild.IsActive) {
                     var parts = Helpers.UnitPartsManagerParts(Helpers.UnitDescriptorParts(owner));
-                    return (bool)canBeUsedOn.Invoke(parts[UnitPartCanHold2hWeaponIn1h], new object[] { weapon });
+                    return (bool)CallOfTheWild.canBeUsedOn(parts, weapon);
                 } else {
                     return owner.Proficiencies.Contains(weapon.Blueprint.Category);
                 }

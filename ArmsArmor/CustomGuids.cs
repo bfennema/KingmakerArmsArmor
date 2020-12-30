@@ -16,6 +16,12 @@
         public const string ShieldBashBasicMechanics = "3175068c1ee64e12bfed885062f15bae";
         public const string TempleSword = "ac6146fda25146e8b0f181cbdd8ae34d";
         public const string StandardTempleSword = "e21f428f9fc640f3b2a44ea8c0c2bd6b";
+        public const string PsychicStandardTempleSword = "e448f0255f3642218a9df26e9503028d";
+        public const string TempleSwordManifestWeaponBuff = "7256963277d948a092fe423f27cfd019";
+        public const string TempleSwordManifestWeaponAbility = "881ee5c449b44665b526eed4118ee0dc";
+        public const string TempleSwordManifestWeaponBothHandsBuff = "d0e9e466db0e42a5b8b078beaf555a47";
+        public const string TempleSwordManifestWeaponBothHandsAbility = "edc5fc0cd0114a4d802010250f9d26db";
+        public const string TempleSwordFocusedWeaponAdvancedWeaponTrainingFeatureSelection = "017b2967aafe46449676caaa38ecc787";
         public const string SpikedLightShield = "0c87000706cb41789657938773e1b279";
         public const string SpikedHeavyShield = "3776ede5b48a48d7975adf32e6e09f7f";
         public const string SpikedLightShieldBashingPlus1 = "365bf1134c894df9908464920837240a";

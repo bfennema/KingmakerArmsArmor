@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Kingmaker.Blueprints;
+using Kingmaker.Enums;
 using Kingmaker.Items;
 using Kingmaker.UnitLogic;
+using UnityEngine;
 
 namespace ArmsArmor
 {
@@ -13,6 +16,7 @@ namespace ArmsArmor
         private static MethodInfo CanBeUsedOn;
         private static MethodInfo AddEntry;
         private static Type GuidStorage;
+        private static bool loaded = false;
 
         static public bool IsActive {
             get { return assembly != null; }
@@ -27,15 +31,18 @@ namespace ArmsArmor
         }
 
         static void LoadPostfix() {
-            if (Main.ModSettings.TempleSword == true) {
-                Main.ModEntry.Logger.Log("Adding Temple Sword variants for CoTW");
+            if (loaded == false) {
+                loaded = true;
+                if (Main.ModSettings.TempleSword == true) {
+                    Main.ModEntry.Logger.Log("Adding Temple Sword variants for CoTW");
 
-                addEntry("PsychicStandardTempleSword", CustomGuids.PsychicStandardTempleSword);
-                addEntry("TempleSwordManifestWeaponBuff", CustomGuids.TempleSwordManifestWeaponBuff);
-                addEntry("TempleSwordManifestWeaponAbility", CustomGuids.TempleSwordManifestWeaponAbility);
-                addEntry("TempleSwordManifestWeaponBothHandsBuff", CustomGuids.TempleSwordManifestWeaponBothHandsBuff);
-                addEntry("TempleSwordManifestWeaponBothHandsAbility", CustomGuids.TempleSwordManifestWeaponBothHandsAbility);
-                addEntry("TempleSwordFocusedWeaponAdvancedWeaponTrainingFeatureSelection", CustomGuids.TempleSwordFocusedWeaponAdvancedWeaponTrainingFeatureSelection);
+                    addEntry("PsychicStandardTempleSword", CustomGuids.PsychicStandardTempleSword);
+                    addEntry("TempleSwordManifestWeaponBuff", CustomGuids.TempleSwordManifestWeaponBuff);
+                    addEntry("TempleSwordManifestWeaponAbility", CustomGuids.TempleSwordManifestWeaponAbility);
+                    addEntry("TempleSwordManifestWeaponBothHandsBuff", CustomGuids.TempleSwordManifestWeaponBothHandsBuff);
+                    addEntry("TempleSwordManifestWeaponBothHandsAbility", CustomGuids.TempleSwordManifestWeaponBothHandsAbility);
+                    addEntry("TempleSwordFocusedWeaponAdvancedWeaponTrainingFeatureSelection", CustomGuids.TempleSwordFocusedWeaponAdvancedWeaponTrainingFeatureSelection);
+                }
             }
         }
 

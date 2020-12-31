@@ -47,6 +47,7 @@ namespace ArmsArmor
                         DefaultsForWeaponCategories.Init();
                         WeaponFocusTempleSword.Init();
                     }
+                    CombatCompetenceProficiencies.Init();
                     SpikedLightShield.Init();
                     SpikedHeavyShield.Init();
                     SpikedLightShieldBashingPlus1.Init();

@@ -31,5 +31,20 @@
         public const string SpikedHeavyShieldArmorItem = "3179076cd62f41e1ab99a9d40375e496";
         public const string SpikedLightShieldBashingPlus1ArmorItem = "85d0cf005cca46f9b1aed18c4a215410";
         public const string SpikedHeavyShieldBashingPlus1ArmorItem = "1d0e06b889f44adb98e043d90529bec5";
+        public const string CombatCompetenceProficiencyNone = "ba39621e6df047468e91b2f600331a0e";
+        public const string CombatCompetenceProficiencyAxe = "92c2a10c95864d4dab155b3634ee30c3";
+        public const string CombatCompetenceProficiencyBladesHeavy = "41cef9fc9de4414888d770550d917826";
+        public const string CombatCompetenceProficiencyBladesLight = "b702887adc5e4a82872d69c3e48611dd";
+        public const string CombatCompetenceProficiencyBows = "c313d67a81b64824997aa6551c4cf035";
+        public const string CombatCompetenceProficiencyCrossbows = "9a3f1ed48bc64e3eac8a448cac14c7cf";
+        public const string CombatCompetenceProficiencyDouble = "c960277ef4de493892a1556697b3b98b";
+        public const string CombatCompetenceProficiencyFlails = "b8411a58d5fb43f7a1f89883886098b8";
+        public const string CombatCompetenceProficiencyHammers = "6fe565e7689045bfa44a6ff0c3edbbea";
+        public const string CombatCompetenceProficiencyMonk = "d22dbb882f4b4f9887589bb8281a154c";
+        public const string CombatCompetenceProficiencyNatural = "9d879dc0efe24ef68f793381E6d59f24";
+        public const string CombatCompetenceProficiencyPolearms = "50aac77d934e44b3a07357f8Be913df4";
+        public const string CombatCompetenceProficiencySpears = "a2b0f34267da4e17af7e0add63d3e135";
+        public const string CombatCompetenceProficiencyThrown = "b5e92c7bdb9548afac10517758bc5bc1";
+        public const string CombatCompetenceProficiencyClose = "2efc49caac134b20a0b5ec25d82c5f35";
     }
 }

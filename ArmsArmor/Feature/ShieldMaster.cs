@@ -5,8 +5,7 @@ using UnityEngine;
 
 namespace ArmsArmor
 {
-    public class ShieldMasterFeature
-    {
+    public class ShieldMasterFeature {
         static BlueprintFeature blueprint = null;
         static public BlueprintFeature GetBlueprint() {
             if (!blueprint) {
@@ -22,6 +21,7 @@ namespace ArmsArmor
             }
             return blueprint;
         }
+
         static public void Init() {
             GetBlueprint();
         }

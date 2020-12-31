@@ -6,8 +6,7 @@ using Kingmaker.UnitLogic.FactLogic;
 
 namespace ArmsArmor
 {
-    public class ImprovedShieldBash
-    {
+    public class ImprovedShieldBash {
         static BlueprintFeature blueprint = null;
         static private BlueprintFeature GetBlueprint() {
             if (!blueprint) {
@@ -29,6 +28,7 @@ namespace ArmsArmor
             }
             return blueprint;
         }
+
         static public void Init() {
             GetBlueprint();
         }

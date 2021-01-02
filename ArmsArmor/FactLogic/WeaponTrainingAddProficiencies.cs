@@ -36,8 +36,7 @@ namespace ArmsArmor
                     foreach (Fact fact in unitPartWeaponTraining.WeaponTrainings) {
                         if (fact.GetRank() >= WeaponTrainingRankRestriction) {
                             foreach (var gameLogicComponent in fact.Components) {
-                                if (gameLogicComponent is WeaponGroupAttackBonus weaponGroupAttackBonus) {
-                                    var blueprint = CombatCompetenceProficiencies.GetBlueprint(weaponGroupAttackBonus.WeaponGroup);
+                                if (gameLogicComponent is WeaponGroupAttackBonus) {
                                     CombatCompetence.RemoveProficiency(this.Fact);
                                 }
                             }

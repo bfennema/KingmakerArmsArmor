@@ -7,6 +7,7 @@ using Kingmaker.Blueprints.Facts;
 using Kingmaker.Blueprints.Items.Armors;
 using Kingmaker.Blueprints.Items.Weapons;
 using Kingmaker.Enums;
+using Kingmaker.Localization;
 using Kingmaker.UnitLogic.FactLogic;
 using UnityEngine;
 
@@ -88,9 +89,12 @@ namespace ArmsArmor
                 addProficiencies.name = "$AddProficiencies$7fee2f82-6fa7-44d2-9e26-339d5da9057f";
 
                 var blueprint = ScriptableObject.CreateInstance<BlueprintFeature>();
-                blueprint.Groups = new FeatureGroup[] { FeatureGroup.Feat, FeatureGroup.CombatFeat };
+                blueprint.Groups = new FeatureGroup[0];
                 blueprint.Ranks = 1;
                 blueprint.IsClassFeature = true;
+                blueprint.HideInUI = true;
+                Helpers.BlueprintUnitFactDisplayName(blueprint) = new LocalizedString();
+                Helpers.BlueprintUnitFactDescription(blueprint) = new LocalizedString();
                 blueprint.ComponentsArray = new BlueprintComponent[] { addProficiencies };
                 Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = guids[(int)group];
                 blueprint.name = "CombatCompetenceProficiency" + group.ToString();

@@ -6,27 +6,19 @@ namespace ArmsArmor
 {
     class ItemEntityWeaponPatch {
         static public bool IsTwoHanded(ItemEntityWeapon weapon, UnitDescriptor owner) {
-            if (Helpers.IsExoticTwoHandedMartialWeapon(weapon.Blueprint)) {
+            if (owner != null && Helpers.IsExoticTwoHandedMartialWeapon(weapon.Blueprint)) {
                 return !IsProficient(weapon, owner);
             } else {
                 return weapon.Blueprint.IsTwoHanded;
             }
         }
 
-        static public bool IsTwoHanded(ItemEntityWeapon weapon) {
-            return IsTwoHanded(weapon, weapon.Owner);
-        }
-
-        static public bool IsProficient(ItemEntityWeapon weapon, UnitDescriptor owner) {
-            if (owner != null) {
-                if (CallOfTheWild.IsActive) {
-                    var parts = Helpers.UnitPartsManagerParts(Helpers.UnitDescriptorParts(owner));
-                    return (bool)CallOfTheWild.canBeUsedOn(parts, weapon);
-                } else {
-                    return owner.Proficiencies.Contains(weapon.Blueprint.Category);
-                }
+        static private bool IsProficient(ItemEntityWeapon weapon, UnitDescriptor owner) {
+            if (CallOfTheWild.IsActive) {
+                var parts = Helpers.UnitPartsManagerParts(Helpers.UnitDescriptorParts(owner));
+                return (bool)CallOfTheWild.canBeUsedOn(parts, weapon);
             } else {
-                return true;
+                return owner.Proficiencies.Contains(weapon.Blueprint.Category);
             }
         }
 
@@ -50,8 +42,9 @@ namespace ArmsArmor
         private static class ItemEntityWeaponHoldInTwoHandsPatch {
             [HarmonyLib.HarmonyAfter(new string[] { "CallOfTheWild" })]
             private static void Postfix(ItemEntityWeapon __instance, ref bool __result) {
-                if (__result == true && !IsTwoHanded(__instance)
-                    && __instance.Owner != null && !__instance.Owner.Get<UnitPartTwoHand>().TwoHand) {
+                var wielder = __instance.Wielder;
+                var unitPartTwoHand = (wielder != null) ? wielder.Get<UnitPartTwoHand>() : null;
+                if (__result == true && !IsTwoHanded(__instance, wielder) && !(unitPartTwoHand && unitPartTwoHand.TwoHand)) {
                     __result = false;
                 }
             }

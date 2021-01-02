@@ -21,15 +21,18 @@ namespace ArmsArmor
                     }
                 }
             }
+
             private static void Postfix(CharSAttack __instance, List<UIUtilityItem.AttackData> attackData, bool isAdditionalWeapon, UnitDescriptor unit) {
                 if (!isAdditionalWeapon && attackData.Count > 1) {
                     if (__instance.AttackUI[0].ItemSlot.Item == __instance.AttackUI[1].ItemSlot.Item) {
                         ItemEntityWeapon itemEntityWeapon = attackData[0].Item as ItemEntityWeapon;
                         ItemEntityShield itemEntityShield = attackData[0].Item as ItemEntityShield;
-                        if (itemEntityWeapon != null && !ItemEntityWeaponPatch.IsTwoHanded(itemEntityWeapon)
-                            && (!unit.Get<UnitPartTwoHand>().TwoHand || unit.Get<UnitPartMagus>().SpellCombat.Active)) {
+                        var unitPartTwoHand = unit.Get<UnitPartTwoHand>();
+                        var unitPartMagus = unit.Get<UnitPartMagus>();
+                        if (itemEntityWeapon != null && !ItemEntityWeaponPatch.IsTwoHanded(itemEntityWeapon, unit)
+                            && (!(unitPartTwoHand && unitPartTwoHand.TwoHand) || (unitPartMagus && unitPartMagus.SpellCombat.Active))) {
                             __instance.AttackUI[1].SetIcon(null, 0f);
-                        } else if (itemEntityShield != null && (itemEntityShield.WeaponComponent.Blueprint.IsLight || !unit.Get<UnitPartTwoHand>().TwoHand)) {
+                        } else if (itemEntityShield != null && (itemEntityShield.WeaponComponent.Blueprint.IsLight || !(unitPartTwoHand && unitPartTwoHand.TwoHand))) {
                             __instance.AttackUI[1].SetIcon(null, 0f);
                         } else {
                             __instance.AttackUI[1].SetIcon(attackData[0].Icon, 0.3f);

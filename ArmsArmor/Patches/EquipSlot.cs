@@ -20,7 +20,7 @@ namespace ArmsArmor
                     return;
                 }
                 if (weapon != null) {
-                    if (ItemEntityWeaponPatch.IsTwoHanded(weapon)) {
+                    if (ItemEntityWeaponPatch.IsTwoHanded(weapon, weapon.Owner)) {
                         Color color = __instance.ItemImage.color;
                         color.a = 0.5f;
                         __instance.ItemImage.sprite = weapon.Blueprint.Icon;

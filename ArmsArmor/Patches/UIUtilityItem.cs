@@ -15,7 +15,7 @@ namespace ArmsArmor
                 }
             }
             private static void Postfix(ItemEntity item, ref string __result) {
-                if (item is ItemEntityWeapon weapon && weapon.Owner != null && ItemEntityWeaponPatch.IsTwoHanded(weapon)) {
+                if (item is ItemEntityWeapon weapon && ItemEntityWeaponPatch.IsTwoHanded(weapon, weapon.Owner)) {
                     __result = UIStrings.Instance.Tooltips.TwoHanded;
                 }
             }

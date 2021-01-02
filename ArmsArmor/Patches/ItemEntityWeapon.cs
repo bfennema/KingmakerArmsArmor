@@ -15,8 +15,7 @@ namespace ArmsArmor
 
         static private bool IsProficient(ItemEntityWeapon weapon, UnitDescriptor owner) {
             if (CallOfTheWild.IsActive) {
-                var parts = Helpers.UnitPartsManagerParts(Helpers.UnitDescriptorParts(owner));
-                return (bool)CallOfTheWild.canBeUsedOn(parts, weapon);
+                return CallOfTheWild.canBeUsedOn(owner, weapon);
             } else {
                 return owner.Proficiencies.Contains(weapon.Blueprint.Category);
             }

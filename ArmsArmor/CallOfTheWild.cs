@@ -31,8 +31,13 @@ namespace ArmsArmor
             get { return assembly != null; }
         }
 
-        static public bool canBeUsedOn(Dictionary<Type, UnitPart> parts, ItemEntityWeapon weapon) {
-            return (bool)UnitPartCanHold2hWeaponIn1hCanBeUsedOn.Invoke(parts[UnitPartCanHold2hWeaponIn1h], new object[] { weapon });
+        static public bool canBeUsedOn(UnitDescriptor owner, ItemEntityWeapon weapon) {
+            var parts = Helpers.UnitPartsManagerParts(Helpers.UnitDescriptorParts(owner));
+            if (parts.ContainsKey(UnitPartCanHold2hWeaponIn1h)) {
+                return (bool)UnitPartCanHold2hWeaponIn1hCanBeUsedOn.Invoke(parts[UnitPartCanHold2hWeaponIn1h], new object[] { weapon });
+            } else {
+                return owner.Proficiencies.Contains(weapon.Blueprint.Category);
+            }
         }
 
         static void addEntry(string name, string guid) {

@@ -6,18 +6,14 @@ namespace ArmsArmor
 {
     class ItemEntityWeaponPatch {
         static public bool IsTwoHanded(ItemEntityWeapon weapon, UnitDescriptor owner) {
-            if (owner != null && Helpers.IsExoticTwoHandedMartialWeapon(weapon.Blueprint)) {
-                return !IsProficient(weapon, owner);
+            if (owner != null && weapon.Blueprint.IsTwoHanded && CallOfTheWild.IsActive) {
+                return !CallOfTheWild.canBeUsedOn(owner, weapon);
             } else {
-                return weapon.Blueprint.IsTwoHanded;
-            }
-        }
-
-        static private bool IsProficient(ItemEntityWeapon weapon, UnitDescriptor owner) {
-            if (CallOfTheWild.IsActive) {
-                return CallOfTheWild.canBeUsedOn(owner, weapon);
-            } else {
-                return owner.Proficiencies.Contains(weapon.Blueprint.Category);
+                if (owner != null && Helpers.IsExoticTwoHandedMartialWeapon(weapon.Blueprint)) {
+                    return !owner.Proficiencies.Contains(weapon.Blueprint.Category);
+                } else {
+                    return weapon.Blueprint.IsTwoHanded;
+                }
             }
         }
 

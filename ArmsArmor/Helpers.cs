@@ -68,6 +68,9 @@ namespace ArmsArmor
         static public readonly HarmonyLib.AccessTools.FieldRef<BlueprintWeaponType, WeaponVisualParameters> BlueprintWeaponTypeVisualParameters =
             HarmonyLib.AccessTools.FieldRefAccess<BlueprintWeaponType, WeaponVisualParameters>("m_VisualParameters");
 
+        static public readonly HarmonyLib.AccessTools.FieldRef<BlueprintWeaponType, AttackType> BlueprintWeaponTypeAttackType =
+            HarmonyLib.AccessTools.FieldRefAccess<BlueprintWeaponType, AttackType>("m_AttackType");
+
         static public readonly HarmonyLib.AccessTools.FieldRef<BlueprintWeaponType, Feet> BlueprintWeaponTypeAttackRange =
             HarmonyLib.AccessTools.FieldRefAccess<BlueprintWeaponType, Feet>("m_AttackRange");
 
@@ -88,6 +91,9 @@ namespace ArmsArmor
 
         static public readonly HarmonyLib.AccessTools.FieldRef<BlueprintWeaponType, float> BlueprintWeaponTypeWeight =
             HarmonyLib.AccessTools.FieldRefAccess<BlueprintWeaponType, float>("m_Weight");
+
+        static public readonly HarmonyLib.AccessTools.FieldRef<BlueprintWeaponType, bool> BlueprintWeaponTypeIsTwoHanded =
+            HarmonyLib.AccessTools.FieldRefAccess<BlueprintWeaponType, bool>("m_IsTwoHanded");
 
         static public readonly HarmonyLib.AccessTools.FieldRef<BlueprintWeaponType, bool> BlueprintWeaponTypeIsLight =
             HarmonyLib.AccessTools.FieldRefAccess<BlueprintWeaponType, bool>("m_IsLight");

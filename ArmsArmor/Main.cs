@@ -39,14 +39,20 @@ namespace ArmsArmor
                     LocalizedStringHelper.Init();
                     BasicFeatsProgression.Init();
                     WeaponTrainingSelection.Init();
+                    ExoticWeaponProficiencySelection.Init();
                     if (ModSettings.TempleSword == true) {
-                        ExoticWeaponProficiencySelection.Init();
                         TempleSword.Init();
                         StandardTempleSword.Init();
                         MonkWeaponProficiency.Init();
-                        DefaultsForWeaponCategories.Init();
                         WeaponFocusTempleSword.Init();
                     }
+                    if (ModSettings.OrcHornbow == true) {
+                        OrcHornbow.Init();
+                        StandardOrcHornbow.Init();
+                        MartialWeaponProficiency.Init();
+                        WeaponFocusOrcHornbow.Init();
+                    }
+                    DefaultsForWeaponCategories.Init();
                     CombatCompetenceProficiencies.Init();
                     SpikedLightShield.Init();
                     SpikedHeavyShield.Init();

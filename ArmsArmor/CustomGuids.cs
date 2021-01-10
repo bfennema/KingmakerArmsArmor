@@ -11,12 +11,12 @@
         public const string IrongripEnchantment = "db07984caaaf42c6bdeddf555e0d9b71";
         public const string CombatCompetence = "d86d68db71034cdc818e32e9694d6e0f";
         public const string ReduceOversizedPenalty = "94d5c8963cd14cc8a4cc4e0189d02c29";
-        public const string TempleSwordProficiency = "ec367525bd9a45b0be493a8c17ba7487";
-        public const string WeaponFocusTempleSword = "0d9ab546885b4159bf290aae2b187177";
         public const string ShieldBashBasicMechanics = "3175068c1ee64e12bfed885062f15bae";
         public const string TripBasicMechanics = "eeb5d3ecef8f4db1ab24e9b2002e3da5";
         public const string SunderBasicMechanics = "00c43620659d4a43b0bf08f9d5fc7f7d";
         public const string DisarmBasicMechanics = "2338becfbd0141dc96f781177468eec5";
+        public const string TempleSwordProficiency = "ec367525bd9a45b0be493a8c17ba7487";
+        public const string WeaponFocusTempleSword = "0d9ab546885b4159bf290aae2b187177";
         public const string TempleSword = "ac6146fda25146e8b0f181cbdd8ae34d";
         public const string StandardTempleSword = "e21f428f9fc640f3b2a44ea8c0c2bd6b";
         public const string PsychicStandardTempleSword = "e448f0255f3642218a9df26e9503028d";
@@ -25,6 +25,11 @@
         public const string TempleSwordManifestWeaponBothHandsBuff = "d0e9e466db0e42a5b8b078beaf555a47";
         public const string TempleSwordManifestWeaponBothHandsAbility = "edc5fc0cd0114a4d802010250f9d26db";
         public const string TempleSwordFocusedWeaponAdvancedWeaponTrainingFeatureSelection = "017b2967aafe46449676caaa38ecc787";
+        public const string OrcHornbowProficiency = "cd01f7b4b6864740b46cab1b8d9b1e34";
+        public const string WeaponFocusOrcHornbow = "4e55f91b6e35449fad7df46dab07425d";
+        public const string OrcHornbow = "ca12d888628e45a4b3a5834a2da3c691";
+        public const string StandardOrcHornbow = "af142f06a9284bc2a42e667e60743541";
+        public const string OrcHornbowFocusedWeaponAdvancedWeaponTrainingFeatureSelection = "67871d61f35445eea590cb63f4f69628";
         public const string SpikedLightShield = "0c87000706cb41789657938773e1b279";
         public const string SpikedHeavyShield = "3776ede5b48a48d7975adf32e6e09f7f";
         public const string SpikedLightShieldBashingPlus1 = "365bf1134c894df9908464920837240a";

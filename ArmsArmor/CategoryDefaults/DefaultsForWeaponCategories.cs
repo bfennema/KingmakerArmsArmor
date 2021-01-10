@@ -8,11 +8,20 @@ namespace ArmsArmor
         static public void Init() {
             var blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintCategoryDefaults>(ExistingGuids.DefaultsForWeaponCategories);
             var entries = blueprint.Entries.ToList();
-            entries.Add(new BlueprintCategoryDefaults.CategoryDefaultEntry
-            {
-                Key = TempleSword.WeaponCategoryTempleSword,
-                DefaultWeapon = StandardTempleSword.GetBlueprint()
-            });
+            if (Main.ModSettings.TempleSword == true) {
+                entries.Add(new BlueprintCategoryDefaults.CategoryDefaultEntry
+                {
+                    Key = TempleSword.WeaponCategoryTempleSword,
+                    DefaultWeapon = StandardTempleSword.GetBlueprint()
+                });
+            }
+            if (Main.ModSettings.OrcHornbow == true) {
+                entries.Add(new BlueprintCategoryDefaults.CategoryDefaultEntry
+                {
+                    Key = OrcHornbow.WeaponCategoryOrcHornbow,
+                    DefaultWeapon = StandardOrcHornbow.GetBlueprint()
+                });
+            }
             blueprint.Entries = entries.ToArray();
         }
     }

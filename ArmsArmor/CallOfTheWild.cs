@@ -57,6 +57,11 @@ namespace ArmsArmor
                     addEntry("TempleSwordManifestWeaponBothHandsAbility", CustomGuids.TempleSwordManifestWeaponBothHandsAbility);
                     addEntry("TempleSwordFocusedWeaponAdvancedWeaponTrainingFeatureSelection", CustomGuids.TempleSwordFocusedWeaponAdvancedWeaponTrainingFeatureSelection);
                 }
+                if (Main.ModSettings.OrcHornbow == true) {
+                    Main.ModEntry.Logger.Log("Adding Orc Hornbow variants for CoTW");
+
+                    addEntry("OrcHornbowFocusedWeaponAdvancedWeaponTrainingFeatureSelection", CustomGuids.OrcHornbowFocusedWeaponAdvancedWeaponTrainingFeatureSelection);
+                }
             }
         }
 

@@ -22,6 +22,11 @@ namespace ArmsArmor
             AddString(StringGuids.WeaponFocusTempleSwordDescription, "You gain a +1 bonus on all attack rolls you make using temple swords.");
             AddString(StringGuids.TempleSwordProficiency, "Weapon Proficiency (Temple Sword)");
             AddString(StringGuids.TempleSwordProficiencyDescription, "You become proficient with temple swords and can use them as a weapon.");
+            AddString(StringGuids.OrcHornbow, "Orc Hornbow");
+            AddString(StringGuids.WeaponFocusOrcHornbow, "Weapon Focus (Orc Hornbow)");
+            AddString(StringGuids.WeaponFocusOrcHornbowDescription, "You gain a +1 bonus on all attack rolls you make using orc hornbows.");
+            AddString(StringGuids.OrcHornbowProficiency, "Weapon Proficiency (Orc Hornbow)");
+            AddString(StringGuids.OrcHornbowProficiencyDescription, "You become proficient with orc hornbows and can use them as a weapon.");
             AddString(StringGuids.CombatCompetence, "Combat Competence");
             AddString(StringGuids.CombatCompetenceDescription, "For any weapon in the associated weapon group with which the fighter is not proficient, the penalty on attack rolls taken as a result of not being proficient is reduced by an amount equal to the fighter’s weapon training bonus with that weapon group. Once the penalty is reduced to 0, the fighter becomes proficient with such weapons.");
             AddString(StringGuids.IrongripEnchantment, "Irongrip");
@@ -55,6 +60,11 @@ namespace ArmsArmor
         public const string WeaponFocusTempleSwordDescription = "6fcbb42e-ab9c-475b-bfa5-7330d6331810";
         public const string TempleSwordProficiency = "4fa06299-19dd-48c2-bab6-de38d54fd587";
         public const string TempleSwordProficiencyDescription = "b0aa76ca-bc8e-4cde-9f30-16e0d3953732";
+        public const string OrcHornbow = "b80ab81e-10b6-47fc-a0f1-4079a8547424";
+        public const string WeaponFocusOrcHornbow = "9d58e91b-d27f-41eb-ac06-230a5900ba62";
+        public const string WeaponFocusOrcHornbowDescription = "437278b7-ed63-4dc7-b979-71a1ed0b5fe9";
+        public const string OrcHornbowProficiency = "42a698a8-dc1e-4b28-85f2-098e83f565f7";
+        public const string OrcHornbowProficiencyDescription = "c5aba8e0-04ce-409e-aab2-9f45bdebfa9d";
         public const string CombatCompetence = "8e2f52b3-9deb-4570-a1b6-7ddd9dd2fd8a";
         public const string CombatCompetenceDescription = "704b2965-6fa6-43d9-a946-1539e2eb142e";
         public const string IrongripEnchantment = "2845c74a-a0aa-473b-87f0-7eedc71f6786";

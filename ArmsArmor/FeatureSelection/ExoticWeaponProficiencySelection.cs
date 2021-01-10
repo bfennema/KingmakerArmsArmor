@@ -9,13 +9,23 @@ namespace ArmsArmor
         static public void Init() {
             var blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintFeatureSelection>(ExistingGuids.ExoticWeaponProficiencySelection);
             var features = blueprint.AllFeatures.ToList();
-            features.Add(TempleSwordProficiency.GetBlueprint());
+            if (Main.ModSettings.TempleSword == true) {
+                features.Add(TempleSwordProficiency.GetBlueprint());
+            }
+            if (Main.ModSettings.OrcHornbow == true) {
+                features.Add(OrcHornbowProficiency.GetBlueprint());
+            }
             blueprint.AllFeatures = features.ToArray();
 
             foreach (var component in blueprint.ComponentsArray) {
                 if (component is PrerequisiteNotProficient prerequisiteNotProficient) {
                     var weaponProficiencies = prerequisiteNotProficient.WeaponProficiencies.ToList();
-                    weaponProficiencies.Add(TempleSword.WeaponCategoryTempleSword);
+                    if (Main.ModSettings.TempleSword == true) {
+                        weaponProficiencies.Add(TempleSword.WeaponCategoryTempleSword);
+                    }
+                    if (Main.ModSettings.OrcHornbow == true) {
+                        weaponProficiencies.Add(OrcHornbow.WeaponCategoryOrcHornbow);
+                    }
                     prerequisiteNotProficient.WeaponProficiencies = weaponProficiencies.ToArray();
                 }
             }

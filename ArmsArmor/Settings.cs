@@ -9,6 +9,7 @@ namespace ArmsArmor
         public bool EquipShieldWithoutProficiency = true;
         public bool FixShieldBashDamage = true;
         public bool TempleSword = true;
+        public bool OrcHornbow = true;
 
         public override void Save(UnityModManager.ModEntry modEntry) {
             Save(this, modEntry);

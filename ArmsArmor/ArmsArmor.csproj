@@ -123,10 +123,13 @@
     <Compile Include="Feature\ImprovedShieldBash.cs" />
     <Compile Include="Feature\ImprovedSunder.cs" />
     <Compile Include="Feature\ImprovedTrip.cs" />
+    <Compile Include="Feature\MartialWeaponProficiency.cs" />
     <Compile Include="Feature\MonkWeaponProficiency.cs" />
+    <Compile Include="Feature\OrcHornbowProficiency.cs" />
     <Compile Include="Feature\ReduceOversizedPenalty.cs" />
     <Compile Include="Feature\ShieldMaster.cs" />
     <Compile Include="Feature\TempleSwordProficiency.cs" />
+    <Compile Include="Feature\WeaponFocusOrcHornbow.cs" />
     <Compile Include="Feature\WeaponFocusTempleSword.cs" />
     <Compile Include="FeatureSelection\ExoticWeaponProficiencySelection.cs" />
     <Compile Include="FeatureSelection\WeaponTrainingSelection.cs" />
@@ -148,6 +151,7 @@
     <Compile Include="ItemShield\SpikedLightShield.cs" />
     <Compile Include="ItemShield\SpikedLightShieldBashingPlus1.cs" />
     <Compile Include="ItemWeapon\BashingShieldWeapon.cs" />
+    <Compile Include="ItemWeapon\StandardOrcHornbow.cs" />
     <Compile Include="ItemWeapon\StandardTempleSword.cs" />
     <Compile Include="LocalizedString.cs" />
     <Compile Include="Main.cs" />
@@ -169,12 +173,14 @@
     <Compile Include="Patches\ItemEntityWeapon.cs" />
     <Compile Include="Patches\TwoWeaponFightingAttackPenalty.cs" />
     <Compile Include="Patches\UIUtilityItem.cs" />
+    <Compile Include="Patches\ZenArcher.cs" />
     <Compile Include="Progression\BasicFeatsProgression.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="UI.cs" />
     <Compile Include="WeaponType\HeavyShield.cs" />
     <Compile Include="WeaponType\LightShield.cs" />
+    <Compile Include="WeaponType\OrcHornbow.cs" />
     <Compile Include="WeaponType\TempleSword.cs" />
   </ItemGroup>
   <ItemGroup />

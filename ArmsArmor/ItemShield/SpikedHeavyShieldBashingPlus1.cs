@@ -20,7 +20,7 @@ namespace ArmsArmor
                 Helpers.BlueprintItemFlavorText(blueprint) = new LocalizedString();
                 Helpers.BlueprintItemNonIdentifiedNameText(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.SpikedHeavyShield);
                 Helpers.BlueprintItemNonIdentifiedDescriptionText(blueprint) = new LocalizedString();
-                Helpers.BlueprintItemCost(blueprint) = 30;
+                Helpers.BlueprintItemCost(blueprint) = 4180;
                 Helpers.BlueprintItemInventoryPutSound(blueprint) = "ShieldPut";
                 Helpers.BlueprintItemInventoryTakeSound(blueprint) = "ShieldTake";
                 blueprint.ComponentsArray = null;

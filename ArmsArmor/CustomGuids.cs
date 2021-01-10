@@ -14,6 +14,9 @@
         public const string TempleSwordProficiency = "ec367525bd9a45b0be493a8c17ba7487";
         public const string WeaponFocusTempleSword = "0d9ab546885b4159bf290aae2b187177";
         public const string ShieldBashBasicMechanics = "3175068c1ee64e12bfed885062f15bae";
+        public const string TripBasicMechanics = "eeb5d3ecef8f4db1ab24e9b2002e3da5";
+        public const string SunderBasicMechanics = "00c43620659d4a43b0bf08f9d5fc7f7d";
+        public const string DisarmBasicMechanics = "2338becfbd0141dc96f781177468eec5";
         public const string TempleSword = "ac6146fda25146e8b0f181cbdd8ae34d";
         public const string StandardTempleSword = "e21f428f9fc640f3b2a44ea8c0c2bd6b";
         public const string PsychicStandardTempleSword = "e448f0255f3642218a9df26e9503028d";

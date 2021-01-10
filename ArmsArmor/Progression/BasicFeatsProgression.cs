@@ -13,6 +13,9 @@ namespace ArmsArmor
             var mechanics = new BlueprintFeature[] {
                 NonProficiencyAttackPenaltyBasicMechanics.GetBlueprint(),
                 ShieldBashBasicMechanics.GetBlueprint(),
+                TripBasicMechanics.GetBlueprint(),
+                SunderBasicMechanics.GetBlueprint(),
+                DisarmBasicMechanics.GetBlueprint(),
                 TwoHandBasicMechanics.GetBlueprint(),
             };
 

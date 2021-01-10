@@ -119,7 +119,10 @@
     <Compile Include="FactLogic\TwoHandFeature.cs" />
     <Compile Include="FactLogic\WeaponTrainingAddProficiencies.cs" />
     <Compile Include="Feature\CombatCompetence.cs" />
+    <Compile Include="Feature\ImprovedDisarm.cs" />
     <Compile Include="Feature\ImprovedShieldBash.cs" />
+    <Compile Include="Feature\ImprovedSunder.cs" />
+    <Compile Include="Feature\ImprovedTrip.cs" />
     <Compile Include="Feature\MonkWeaponProficiency.cs" />
     <Compile Include="Feature\ReduceOversizedPenalty.cs" />
     <Compile Include="Feature\ShieldMaster.cs" />
@@ -148,8 +151,12 @@
     <Compile Include="ItemWeapon\StandardTempleSword.cs" />
     <Compile Include="LocalizedString.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="Mechanics\DisarmBasicMechanics.cs" />
     <Compile Include="Mechanics\NonProficiencyAttackPenalty.cs" />
+    <Compile Include="Mechanics\ProvokeAttackOfOpportunity.cs" />
     <Compile Include="Mechanics\ShieldBashRemoveACBonus.cs" />
+    <Compile Include="Mechanics\SunderBasicMechanics.cs" />
+    <Compile Include="Mechanics\TripBasicMechanics.cs" />
     <Compile Include="Mechanics\TwoWeaponFighting.cs" />
     <Compile Include="Patches\BlueprintItemShield.cs" />
     <Compile Include="Patches\BlueprintWeaponType.cs" />

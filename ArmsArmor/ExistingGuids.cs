@@ -7,6 +7,12 @@
         public const string RapidShotBuff = "0f310c1e709e15e4fa693db15a4baeb4";
         public const string ShieldBashAbility = "3bb6b76ed5b38ab4f957c7f923c23b68";
         public const string ShieldBashFeature = "121811173a614534e8720d7550aae253";
+        public const string TripAction = "6fd05c4ecfebd6f4d873325de442fc17";
+        public const string ImprovedTrip = "0f15c6f70d8fb2b49aa6cc24239cc5fa";
+        public const string SunderAction = "fa9bfb9fd997faf49a108c4b17a00504";
+        public const string ImprovedSunder = "9719015edcbf142409592e2cbaab7fe1";
+        public const string DisarmAction = "45d94c6db453cfc4a9b99b72d6afe6f6";
+        public const string ImprovedDisarm = "25bc9c439ac44fd44ac3b1e58890916f";
         public const string FighterClass = "48ac8db94d5de7645906c7d0ad3bcfbd";
         public const string MonkWeaponProficiency = "c7d6f5244c617734a8a76b6785a752b4";
         public const string ShieldMaster = "dbec636d84482944f87435bd31522fcc";

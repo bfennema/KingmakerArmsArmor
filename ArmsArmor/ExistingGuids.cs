@@ -23,8 +23,12 @@
         public const string WeaponTrainingSelection = "b8cecf4e5e464ad41b79d5b42b76b399";
         public const string Sickle = "ec2da496c7936e14c9a28ce616a6b4cd";
         public const string StandardSickle = "bfe24b51e4d943a42b0976aaee7e1b7c";
+        public const string SicklePlus2 = "b847bb3a188e9cd46868f470b63aaa55";
+        public const string SicklePlus3 = "dafc2f0aa615d9641bd54befde665945";
         public const string CompositeLongbow = "1ac79088a7e5dde46966636a3ac71c35";
         public const string StandardCompositeLongbow = "d23f6f5d3cbf715488b1f73e130dca99";
+        public const string CompositeLongbowPlus1 = "2753a0159681be94da3a5eeabc8c8d1a";
+        public const string CompositeLongbowPlus4 = "862cf5b6dc694054bad497636834faa8";
         public const string WeaponLightShield = "1fd965e522502fe479fdd423cca07684";
         public const string WeaponHeavyShield = "be9b6408e6101cb4997a8996484baf19";
         public const string BasicFeatsProgression = "5b72dd2ca2cb73b49903806ee8986325";
@@ -44,5 +48,11 @@
         public const string TowerShieldAttackPenalty = "f6b1f4378dd64044db145a1c2afa589f";
         public const string StrengthComposite = "c3209eb058d471548928a200d70765e0";
         public const string HalfOrcRace = "1dc20e195581a804890ddc74218bfd8e";
+        public const string Masterwork = "6b38844e2bffbac48b63036b66e735be";
+        public const string Enhancement1 = "d42fc23b92c640846ac137dc26e000d4";
+        public const string Enhancement2 = "eb2faccc4c9487d43b3575d7e77ff3f5";
+        public const string Enhancement3 = "80bb8a737579e35498177e1e3c75899b";
+        public const string Enhancement4 = "783d7d496da6ac44f9511011fc5f1979";
+        public const string Enhancement5 = "bdba267e951851449af552aa9f9e3992";
     }
 }

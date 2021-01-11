@@ -19,6 +19,12 @@
         public const string WeaponFocusTempleSword = "0d9ab546885b4159bf290aae2b187177";
         public const string TempleSword = "ac6146fda25146e8b0f181cbdd8ae34d";
         public const string StandardTempleSword = "e21f428f9fc640f3b2a44ea8c0c2bd6b";
+        public const string MasterworkTempleSword = "cea3e4559ce94c129cc110b83f7a2d32";
+        public const string TempleSwordPlus1 = "047e6e48092844bd9942ab4379145f5f";
+        public const string TempleSwordPlus2 = "3ee6a01db6e1447ea295291817a533e0";
+        public const string TempleSwordPlus3 = "43c4ce9cee924bb99d0465fb928bc3d1";
+        public const string TempleSwordPlus4 = "ec02c6ee74f547e19b1a6fb5abfcc9fb";
+        public const string TempleSwordPlus5 = "630bbe637e944b2ba42e3ddf392ce528";
         public const string PsychicStandardTempleSword = "e448f0255f3642218a9df26e9503028d";
         public const string TempleSwordManifestWeaponBuff = "7256963277d948a092fe423f27cfd019";
         public const string TempleSwordManifestWeaponAbility = "881ee5c449b44665b526eed4118ee0dc";
@@ -29,6 +35,12 @@
         public const string WeaponFocusOrcHornbow = "4e55f91b6e35449fad7df46dab07425d";
         public const string OrcHornbow = "ca12d888628e45a4b3a5834a2da3c691";
         public const string StandardOrcHornbow = "af142f06a9284bc2a42e667e60743541";
+        public const string MasterworkOrcHornbow = "87e332864d364001bfb333cfe4e71e91";
+        public const string OrcHornbowPlus1 = "abfe1022296a4e3fab00f548e37dd873";
+        public const string OrcHornbowPlus2 = "177cd53c319a4a70953763b5635a43ae";
+        public const string OrcHornbowPlus3 = "4b032fd5a4e8459484441ede0ac5430c";
+        public const string OrcHornbowPlus4 = "c1be6f1e881e4e618dfbf55d9393538e";
+        public const string OrcHornbowPlus5 = "76a7aa653bc6419ea935f87c6bb2e2e7";
         public const string OrcHornbowFocusedWeaponAdvancedWeaponTrainingFeatureSelection = "67871d61f35445eea590cb63f4f69628";
         public const string SpikedLightShield = "0c87000706cb41789657938773e1b279";
         public const string SpikedHeavyShield = "3776ede5b48a48d7975adf32e6e09f7f";

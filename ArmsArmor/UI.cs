@@ -21,6 +21,11 @@ namespace ArmsArmor
                 RenderCheckbox(ref Main.ModSettings.FixShieldBashDamage, "Fix shield bash damage.");
                 RenderCheckbox(ref Main.ModSettings.TempleSword, "Add Temple Sword.");
                 RenderCheckbox(ref Main.ModSettings.OrcHornbow, "Add Orc Hornbow.");
+                RenderCheckbox(ref Main.ModSettings.ShieldBash, "Add Shield Bash without Shield Bash Feat.");
+                RenderCheckbox(ref Main.ModSettings.Disarm, "Add Disarm Combat Combat Maneuver without Improved Disarm Feat.");
+                RenderCheckbox(ref Main.ModSettings.Sunder, "Add Sunder Combat Combat Maneuver without Improved Sunder Feat.");
+                RenderCheckbox(ref Main.ModSettings.Trip, "Add Trip Combat Combat Maneuver without Improved Trip Feat.");
+                RenderCheckbox(ref Main.ModSettings.TwoHand, "Add toggle for switching between one handing and two handing weapons.");
 
                 RenderLabel("NOTE: Must restart game after making changes.");
             }

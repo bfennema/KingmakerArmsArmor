@@ -11,24 +11,22 @@ namespace ArmsArmor
         static private BlueprintFeature GetBlueprint() {
             if (!blueprint) {
                 blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>(ExistingGuids.ImprovedSunder);
-                var shieldBashAbility = ResourcesLibrary.TryGetBlueprint<BlueprintAbility>(ExistingGuids.SunderAction);
-                for (int i = 0; i < blueprint.ComponentsArray.Length; i++) {
-                    if (blueprint.ComponentsArray[i] is AddFacts component) {
-                        if (component.Facts.Contains(shieldBashAbility)) {
-                            var list = blueprint.ComponentsArray.ToList();
-                            list.Remove(component);
-                            blueprint.ComponentsArray = list.ToArray();
+                if (Main.ModSettings.Sunder) {
+                    var shieldBashAbility = ResourcesLibrary.TryGetBlueprint<BlueprintAbility>(ExistingGuids.SunderAction);
+                    for (int i = 0; i < blueprint.ComponentsArray.Length; i++) {
+                        if (blueprint.ComponentsArray[i] is AddFacts component) {
+                            if (component.Facts.Contains(shieldBashAbility)) {
+                                var list = blueprint.ComponentsArray.ToList();
+                                list.Remove(component);
+                                blueprint.ComponentsArray = list.ToArray();
+                            }
+                            break;
                         }
-                        break;
                     }
+                    Helpers.BlueprintUnitFactDescription(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.ImprovedSunderDescription);
                 }
-                Helpers.BlueprintUnitFactDescription(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.ImprovedSunderDescription);
             }
             return blueprint;
-        }
-
-        static public void Init() {
-            GetBlueprint();
         }
     }
 }

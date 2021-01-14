@@ -106,6 +106,8 @@
     <Compile Include="ActivatableAbility\RapidShot.cs" />
     <Compile Include="ActivatableAbility\ShieldBash.cs" />
     <Compile Include="ActivatableAbility\TwoHand.cs" />
+    <Compile Include="Buff\AspectOfTheFalcon.cs" />
+    <Compile Include="Buff\HurricaneBow.cs" />
     <Compile Include="Buff\RapidShotBuff.cs" />
     <Compile Include="Buff\TwoHandBuff.cs" />
     <Compile Include="CallOfTheWild.cs" />
@@ -118,7 +120,12 @@
     <Compile Include="ExistingGuids.cs" />
     <Compile Include="FactLogic\TwoHandFeature.cs" />
     <Compile Include="FactLogic\WeaponTrainingAddProficiencies.cs" />
+    <Compile Include="Facts\WeaponGroupProficientAttackBonus.cs" />
+    <Compile Include="Facts\WeaponGroupProficientDamageBonus.cs" />
+    <Compile Include="Feature\ArcheryBonuses.cs" />
+    <Compile Include="Feature\ArcheryBonusesLesser.cs" />
     <Compile Include="Feature\CombatCompetence.cs" />
+    <Compile Include="Feature\OrcHornbowProficiencyBracersOfArchery.cs" />
     <Compile Include="Feature\ImprovedDisarm.cs" />
     <Compile Include="Feature\ImprovedShieldBash.cs" />
     <Compile Include="Feature\ImprovedSunder.cs" />
@@ -127,6 +134,7 @@
     <Compile Include="Feature\MonkWeaponProficiency.cs" />
     <Compile Include="Feature\OrcHornbowProficiency.cs" />
     <Compile Include="Feature\ReduceOversizedPenalty.cs" />
+    <Compile Include="Feature\RubyPhoenix.cs" />
     <Compile Include="Feature\ShieldMaster.cs" />
     <Compile Include="Feature\TempleSwordProficiency.cs" />
     <Compile Include="Feature\WeaponFocusOrcHornbow.cs" />

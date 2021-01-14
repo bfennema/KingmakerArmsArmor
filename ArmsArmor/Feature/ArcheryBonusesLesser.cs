@@ -1,0 +1,36 @@
+﻿using System.Linq;
+using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Facts;
+using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.UnitLogic.FactLogic;
+using UnityEngine;
+
+namespace ArmsArmor
+{
+    public class ArcheryBonusesLesserFeature {
+        static BlueprintFeature blueprint = null;
+        static public BlueprintFeature GetBlueprint() {
+            if (!blueprint) {
+                blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>(ExistingGuids.ArcheryBonusesLesser);
+                for (int i = 0; i < blueprint.ComponentsArray.Length; i++) {
+                    if (blueprint.ComponentsArray[i] is WeaponGroupAttackBonus attack) {
+                        var bonus = ScriptableObject.CreateInstance<WeaponGroupProficientAttackBonus>();
+                        bonus.WeaponGroup = attack.WeaponGroup;
+                        bonus.AttackBonus = attack.AttackBonus;
+                        bonus.Descriptor = attack.Descriptor;
+                        bonus.name = attack.name.Replace("WeaponGroupAttackBonus", "WeaponGroupProficientAttackBonus");
+                        blueprint.ComponentsArray[i] = bonus;
+                    } else if (blueprint.ComponentsArray[i] is AddFacts fact) {
+                        fact.Facts = fact.Facts.Concat(new BlueprintUnitFact[] { OrcHornbowProficiencyBracersOfArchery.GetBlueprint() }).ToArray();
+                    }
+                }
+            }
+            return blueprint;
+        }
+
+        static public void Init() {
+            GetBlueprint();
+        }
+    }
+}

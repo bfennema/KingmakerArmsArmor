@@ -51,6 +51,11 @@ namespace ArmsArmor
                         StandardOrcHornbow.Init();
                         MartialWeaponProficiency.Init();
                         WeaponFocusOrcHornbow.Init();
+                        AspectOfTheFalcon.Init();
+                        HurricaneBow.Init();
+                        ArcheryBonusesFeature.Init();
+                        ArcheryBonusesLesserFeature.Init();
+                        RubyPhoenixFeature.Init();
                     }
                     DefaultsForWeaponCategories.Init();
                     CombatCompetenceProficiencies.Init();

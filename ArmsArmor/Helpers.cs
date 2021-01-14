@@ -234,6 +234,14 @@ namespace ArmsArmor
             HarmonyLib.AccessTools.FieldRefAccess<UnitPartsManager, Dictionary<Type, UnitPart>>("m_Parts");
 
 
+        // UnitProficiency
+        static public readonly HarmonyLib.AccessTools.FieldRef<UnitProficiency, MultiSet<WeaponCategory>> UnitProficiencyWeaponProficiencies =
+            HarmonyLib.AccessTools.FieldRefAccess<UnitProficiency, MultiSet<WeaponCategory>>("m_WeaponProficiencies");
+
+        static public readonly HarmonyLib.AccessTools.FieldRef<MultiSet<WeaponCategory>, Dictionary<WeaponCategory, int>> MultiSetWeaponCategoryData =
+            HarmonyLib.AccessTools.FieldRefAccess<MultiSet<WeaponCategory>, Dictionary<WeaponCategory, int>>("m_Data");
+
+
 
         // Weapons that can be used two handed with martial weapon proficiency, or one handed with exotic
         static public bool IsExoticTwoHandedMartialWeapon(BlueprintItemWeapon weapon) {

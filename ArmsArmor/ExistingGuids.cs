@@ -5,6 +5,8 @@
         public const string WeaponSpecialization = "31470b17e8446ae4ea0dacd6c5817d86";
         public const string RapidShotToggleAbility = "90a77bfe25ec2e14caf8bd5cde9febf2";
         public const string RapidShotBuff = "0f310c1e709e15e4fa693db15a4baeb4";
+        public const string AspectOfTheFalconBuff = "5de9e71d013d1024eb14f4c5605b31dc";
+        public const string HurricaneBowBuff = "002c51d933574824c8ef2b04c9d09ff5";
         public const string ShieldBashAbility = "3bb6b76ed5b38ab4f957c7f923c23b68";
         public const string ShieldBashFeature = "121811173a614534e8720d7550aae253";
         public const string TripAction = "6fd05c4ecfebd6f4d873325de442fc17";
@@ -54,5 +56,8 @@
         public const string Enhancement3 = "80bb8a737579e35498177e1e3c75899b";
         public const string Enhancement4 = "783d7d496da6ac44f9511011fc5f1979";
         public const string Enhancement5 = "bdba267e951851449af552aa9f9e3992";
+        public const string RubyPhoenix = "f614ae47f0d385445ac647c6ba6e2d26";
+        public const string ArcheryBonuses = "136adc54467964446b2e790c1698d93a";
+        public const string ArcheryBonusesLesser = "1440703181bc6e54487b4673e73af34e";
     }
 }

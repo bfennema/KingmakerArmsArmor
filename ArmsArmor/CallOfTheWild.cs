@@ -77,6 +77,10 @@ namespace ArmsArmor
                 WayOfTheBowFeature.Init();
                 ZenArcherKiArrowsBuff.Init();
                 ZenArcherFlurryEffectFeature.Init();
+
+                SnapShotFeature.Init();
+                ImprovedSnapShotFeature.Init();
+                GreaterSnapShotFeature.Init();
             }
         }
 

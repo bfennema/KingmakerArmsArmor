@@ -1,0 +1,46 @@
+﻿using System.Linq;
+using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Prerequisites;
+using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.Enums;
+using UnityEngine;
+
+namespace ArmsArmor
+{
+    public class SnapShotFeature
+    {
+        static BlueprintFeature blueprint = null;
+        static private BlueprintFeature GetBlueprint() {
+            if (!blueprint) {
+                if (CallOfTheWild.IsActive) {
+                    blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>(CallOfTheWildGuids.SnapShotFeature);
+                    var AooWithRangedWeapon = CallOfTheWild.assembly.GetType("CallOfTheWild.AooMechanics.AooWithRangedWeapon");
+                    var DoNotProvokeAooOnAoo = CallOfTheWild.assembly.GetType("CallOfTheWild.AooMechanics.DoNotProvokeAooOnAoo");
+                    foreach (var component in blueprint.ComponentsArray) {
+                        if (component.GetType() == AooWithRangedWeapon || component.GetType() == DoNotProvokeAooOnAoo) {
+                            var weapon_categories = HarmonyLib.AccessTools.Field(component.GetType(), "weapon_categories");
+                            var category = (WeaponCategory[])weapon_categories.GetValue(component);
+                            category = category.Concat(new WeaponCategory[] { OrcHornbow.WeaponCategoryOrcHornbow }).ToArray();
+                            weapon_categories.SetValue(component, category);
+                        }
+                    }
+
+                    var feature = ScriptableObject.CreateInstance<PrerequisiteParametrizedFeature>();
+                    feature.Feature = ResourcesLibrary.TryGetBlueprint<BlueprintParametrizedFeature>(ExistingGuids.WeaponFocus);
+                    feature.ParameterType = FeatureParameterType.WeaponCategory;
+                    feature.WeaponCategory = OrcHornbow.WeaponCategoryOrcHornbow;
+                    feature.Group = Prerequisite.GroupType.Any;
+                    feature.name = "$PrerequisiteParametrizedFeature$2fe6ab9a-4a95-4480-b419-e4e66d9916c9";
+
+                    blueprint.ComponentsArray = blueprint.ComponentsArray.Concat(new BlueprintComponent[] { feature }).ToArray();
+                }
+            }
+            return blueprint;
+        }
+
+        static public void Init() {
+            GetBlueprint();
+        }
+    }
+}

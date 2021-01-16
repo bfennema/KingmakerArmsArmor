@@ -10,5 +10,8 @@
         public const string PerfectStrikeUnlockerFeature = "b6f056cb11ab4ad0ba05462c68e19265";
         public const string ZenArcherKiArrowsBuff = "8a1faab8de75429e9933c618f1c18049";
         public const string ZenArcherFlurryEffectFeature = "e8a22351a73f43f9a4ba5dbf6b7cb9ea";
+        public const string SnapShotFeature = "cd0f3d027f524388816392715ff65488";
+        public const string ImprovedSnapShotFeature = "9ee609ba035a4b7db7c8e321337a2e5b";
+        public const string GreaterSnapShotFeature = "865343e8f56646bc8d10d36c230e1663";
     }
 }

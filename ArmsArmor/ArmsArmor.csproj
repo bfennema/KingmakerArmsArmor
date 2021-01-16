@@ -112,7 +112,10 @@
     <Compile Include="Buff\TwoHandBuff.cs" />
     <Compile Include="CallOfTheWild.cs" />
     <Compile Include="CallOfTheWildGuids.cs" />
+    <Compile Include="CallOfTheWild\GreaterSnapShot.cs" />
+    <Compile Include="CallOfTheWild\ImprovedSnapShot.cs" />
     <Compile Include="CallOfTheWild\KiFocusBowZenArcher.cs" />
+    <Compile Include="CallOfTheWild\SnapShot.cs" />
     <Compile Include="CallOfTheWild\ZenArcherFlurryEffectFeature.cs" />
     <Compile Include="CallOfTheWild\ZenArcherKiArrowsBuff.cs" />
     <Compile Include="CallOfTheWild\ZenArcherPerfectStrike.cs" />

@@ -2,7 +2,7 @@
   "Id": "ArmsArmor",
   "DisplayName": "Arms and Armor",
   "Author": "blfennema",
-  "Version": "1.0.7",
+  "Version": "1.0.8",
   "ManagerVersion": "0.22.9",
   "EntryMethod": "ArmsArmor.Main.Load",
   "HomePage": "https://www.nexusmods.com/pathfinderkingmaker/mods/186",

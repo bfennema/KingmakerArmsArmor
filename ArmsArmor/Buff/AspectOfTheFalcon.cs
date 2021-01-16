@@ -12,13 +12,19 @@ namespace ArmsArmor
         static private BlueprintBuff GetBlueprint() {
             if (!blueprint) {
                 blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintBuff>(ExistingGuids.AspectOfTheFalconBuff);
-                if (Main.ModSettings.OrcHornbow == true) {
-                    var components = blueprint.ComponentsArray.ToList();
+                for (var i = 0; i<blueprint.ComponentsArray.Length; i++) {
+                    if (blueprint.ComponentsArray[i] is WeaponTypeCriticalMultiplierIncrease mult) {
+                        var component = ScriptableObject.CreateInstance<WeaponTypeCriticalEdgeIncrease>();
+                        component.WeaponType = mult.WeaponType;
+                        component.name = component.name.Replace("WeaponTypeCriticalMultiplierIncrease", "WeaponTypeCriticalEdgeIncrease");
+                        blueprint.ComponentsArray[i] = component;
+                    }
+                }
 
-                    var component = ScriptableObject.CreateInstance<WeaponTypeCriticalMultiplierIncrease>();
+                if (Main.ModSettings.OrcHornbow == true) {
+                    var component = ScriptableObject.CreateInstance<WeaponTypeCriticalEdgeIncrease>();
                     component.WeaponType = OrcHornbow.GetBlueprint();
-                    component.AdditionalMultiplier = 1;
-                    component.name = "$WeaponTypeCriticalMultiplierIncrease$72fe0139-2e9b-4b38-aaad-b51847aa3f08";
+                    component.name = "$WeaponTypeCriticalEdgeIncrease$72fe0139-2e9b-4b38-aaad-b51847aa3f08";
                     blueprint.ComponentsArray = blueprint.ComponentsArray.Concat(new BlueprintComponent[] { component }).ToArray();
                 }
             }

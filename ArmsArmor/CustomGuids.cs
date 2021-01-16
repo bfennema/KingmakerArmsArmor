@@ -42,6 +42,8 @@
         public const string OrcHornbowPlus4 = "c1be6f1e881e4e618dfbf55d9393538e";
         public const string OrcHornbowPlus5 = "76a7aa653bc6419ea935f87c6bb2e2e7";
         public const string OrcHornbowFocusedWeaponAdvancedWeaponTrainingFeatureSelection = "67871d61f35445eea590cb63f4f69628";
+        public const string OrcHornbowWayOfTheBowFeature = "75bc47f50f1e45fd83051b39813cd455";
+        public const string OrcHornbowWayOfTheBow6Feature = "cda07b2d2463470b8bca350f714bce48";
         public const string OrcHornbowProficiencyBracersOfArchery = "3c90c86c831349ed8f182d1340dd952e";
         public const string SpikedLightShield = "0c87000706cb41789657938773e1b279";
         public const string SpikedHeavyShield = "3776ede5b48a48d7975adf32e6e09f7f";

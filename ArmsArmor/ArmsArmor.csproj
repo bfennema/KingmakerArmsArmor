@@ -111,6 +111,13 @@
     <Compile Include="Buff\RapidShotBuff.cs" />
     <Compile Include="Buff\TwoHandBuff.cs" />
     <Compile Include="CallOfTheWild.cs" />
+    <Compile Include="CallOfTheWildGuids.cs" />
+    <Compile Include="CallOfTheWild\KiFocusBowZenArcher.cs" />
+    <Compile Include="CallOfTheWild\ZenArcherFlurryEffectFeature.cs" />
+    <Compile Include="CallOfTheWild\ZenArcherKiArrowsBuff.cs" />
+    <Compile Include="CallOfTheWild\ZenArcherPerfectStrike.cs" />
+    <Compile Include="CallOfTheWild\ZenArcherPointBlankMaster.cs" />
+    <Compile Include="CallOfTheWild\WayOfTheBow.cs" />
     <Compile Include="CategoryDefaults\DefaultsForWeaponCategories.cs" />
     <Compile Include="CustomGuids.cs" />
     <Compile Include="EquipmentEnchantment\BashingEnchantment.cs" />
@@ -141,6 +148,7 @@
     <Compile Include="Feature\WeaponFocusTempleSword.cs" />
     <Compile Include="FeatureSelection\ExoticWeaponProficiencySelection.cs" />
     <Compile Include="FeatureSelection\WeaponTrainingSelection.cs" />
+    <Compile Include="CallOfTheWild\ZenArchery.cs" />
     <Compile Include="GameLogicComponent\BashingLogic.cs" />
     <Compile Include="GameLogicComponent\BashingWeaponLogic.cs" />
     <Compile Include="GameLogicComponent\ImpactLogic.cs" />

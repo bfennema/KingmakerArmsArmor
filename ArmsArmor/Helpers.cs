@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.Blueprints.Items;
 using Kingmaker.Blueprints.Items.Armors;
@@ -16,6 +17,7 @@ using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UI.ServiceWindow;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
+using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
 using Kingmaker.Visual.CharacterSystem;
 using UnityEngine;
@@ -241,6 +243,26 @@ namespace ArmsArmor
         static public readonly HarmonyLib.AccessTools.FieldRef<MultiSet<WeaponCategory>, Dictionary<WeaponCategory, int>> MultiSetWeaponCategoryData =
             HarmonyLib.AccessTools.FieldRefAccess<MultiSet<WeaponCategory>, Dictionary<WeaponCategory, int>>("m_Data");
 
+
+        // AddParametrizedFeatures
+        static private readonly Type m_AddParametrizedFeaturesData = HarmonyLib.AccessTools.Inner(typeof(AddParametrizedFeatures), "Data");
+
+        public class AddParametrizedFeaturesData
+        {
+            public BlueprintParametrizedFeature feature;
+            public WeaponCategory category;
+        };
+
+        static public void AddParametrizedFeaturesFeatures(AddParametrizedFeatures feature, AddParametrizedFeaturesData[] array) {
+            var features = Array.CreateInstance(m_AddParametrizedFeaturesData, array.Length);
+            for (int i=0; i<array.Length; i++) {
+                var data = Activator.CreateInstance(m_AddParametrizedFeaturesData);
+                HarmonyLib.AccessTools.Field(data.GetType(), "Feature").SetValue(data, array[i].feature);
+                HarmonyLib.AccessTools.Field(data.GetType(), "ParamWeaponCategory").SetValue(data, array[i].category);
+                features.SetValue(data, i);
+            }
+            HarmonyLib.AccessTools.Field(feature.GetType(), "m_Features").SetValue(feature, features);
+        }
 
 
         // Weapons that can be used two handed with martial weapon proficiency, or one handed with exotic

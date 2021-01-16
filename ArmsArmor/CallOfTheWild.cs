@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.Enums;
 using Kingmaker.Items;
@@ -17,6 +18,7 @@ namespace ArmsArmor
         private static MethodInfo UnitPartCanHold2hWeaponIn1hCanBeUsedOn;
         private static MethodInfo AddEntry;
         private static bool loaded = false;
+        private static bool dictionary = false;
         private static Type FullProficiency;
         private static MethodInfo HasProficiency;
         private static Type CanUse2hWeaponAs1hBase;
@@ -62,6 +64,19 @@ namespace ArmsArmor
 
                     addEntry("OrcHornbowFocusedWeaponAdvancedWeaponTrainingFeatureSelection", CustomGuids.OrcHornbowFocusedWeaponAdvancedWeaponTrainingFeatureSelection);
                 }
+            }
+        }
+
+        static void LoadDictionaryPostfix() {
+            if (dictionary == false) {
+                dictionary = true;
+                ZenArcheryFeature.Init();
+                KiFocusBowZenArcherFeature.Init();
+                ZenArcherPerfectStrikeFeature.Init();
+                ZenArcherPointBlankMasterFeature.Init();
+                WayOfTheBowFeature.Init();
+                ZenArcherKiArrowsBuff.Init();
+                ZenArcherFlurryEffectFeature.Init();
             }
         }
 
@@ -194,6 +209,8 @@ namespace ArmsArmor
             assembly = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(a => a.GetName().Name == "CallOfTheWild");
 
             if (IsActive) {
+                AddPostfix("Main+LibraryScriptableObject_LoadDictionary_Patch", "Postfix", new Type[] { typeof(LibraryScriptableObject) }, nameof(LoadDictionaryPostfix));
+
                 var GuidStorage = assembly.GetType("CallOfTheWild.Helpers+GuidStorage");
                 AddPostfix(GuidStorage, "load", new Type[] { typeof(string), typeof(bool) }, nameof(LoadPostfix));
 

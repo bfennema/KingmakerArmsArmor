@@ -2,6 +2,7 @@
 {
     class ExistingGuids {
         public const string MartialWeaponProficiencyFeature = "203992ef5b35c864390b4e4a1e200629";
+        public const string WeaponFocus = "1e1f627d26ad36f43bbd26cc2bf8ac7e";
         public const string WeaponSpecialization = "31470b17e8446ae4ea0dacd6c5817d86";
         public const string RapidShotToggleAbility = "90a77bfe25ec2e14caf8bd5cde9febf2";
         public const string RapidShotBuff = "0f310c1e709e15e4fa693db15a4baeb4";
@@ -59,5 +60,7 @@
         public const string RubyPhoenix = "f614ae47f0d385445ac647c6ba6e2d26";
         public const string ArcheryBonuses = "136adc54467964446b2e790c1698d93a";
         public const string ArcheryBonusesLesser = "1440703181bc6e54487b4673e73af34e";
+        public const string MonkClass = "e8f21e5b58e0569468e420ebea456124";
+        public const string PointBlankMaster = "05a3b543b0a0a0346a5061e90f293f0b";
     }
 }

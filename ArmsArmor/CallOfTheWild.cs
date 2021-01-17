@@ -53,16 +53,44 @@ namespace ArmsArmor
                     Main.ModEntry.Logger.Log("Adding Temple Sword variants for CoTW");
 
                     addEntry("PsychicStandardTempleSword", CustomGuids.PsychicStandardTempleSword);
+                    addEntry("SpiritualStandardTempleSword", CustomGuids.SpiritualStandardTempleSword);
                     addEntry("TempleSwordManifestWeaponBuff", CustomGuids.TempleSwordManifestWeaponBuff);
                     addEntry("TempleSwordManifestWeaponAbility", CustomGuids.TempleSwordManifestWeaponAbility);
                     addEntry("TempleSwordManifestWeaponBothHandsBuff", CustomGuids.TempleSwordManifestWeaponBothHandsBuff);
                     addEntry("TempleSwordManifestWeaponBothHandsAbility", CustomGuids.TempleSwordManifestWeaponBothHandsAbility);
                     addEntry("TempleSwordFocusedWeaponAdvancedWeaponTrainingFeatureSelection", CustomGuids.TempleSwordFocusedWeaponAdvancedWeaponTrainingFeatureSelection);
+                    addEntry("WeaponMasteryOracleRevelationTempleSwordImprovedCriticalFeature", CustomGuids.WeaponMasteryOracleRevelationTempleSwordImprovedCriticalFeature);
+                    addEntry("WeaponMasteryOracleRevelationTempleSwordGreaterWeaponFocusFeature", CustomGuids.WeaponMasteryOracleRevelationTempleSwordGreaterWeaponFocusFeature);
+                    addEntry("WeaponMasteryOracleRevelationTempleSwordFeature", CustomGuids.WeaponMasteryOracleRevelationTempleSwordFeature);
+                    addEntry("OracleSpiritGuideBattleMasterHexTempleSwordWeaponSpecializationFeature", CustomGuids.OracleSpiritGuideBattleMasterHexTempleSwordWeaponSpecializationFeature);
+                    addEntry("OracleSpiritGuideBattleMasterHexTempleSwordGreaterWeaponFocusFeature", CustomGuids.OracleSpiritGuideBattleMasterHexTempleSwordGreaterWeaponFocusFeature);
+                    addEntry("OracleSpiritGuideBattleMasterHexTempleSwordFeature", CustomGuids.OracleSpiritGuideBattleMasterHexTempleSwordFeature);
+                    addEntry("ShamanBattleMasterHexTempleSwordWeaponSpecializationFeature", CustomGuids.ShamanBattleMasterHexTempleSwordWeaponSpecializationFeature);
+                    addEntry("ShamanBattleMasterHexTempleSwordGreaterWeaponFocusFeature", CustomGuids.ShamanBattleMasterHexTempleSwordGreaterWeaponFocusFeature);
+                    addEntry("ShamanBattleMasterHexTempleSwordFeature", CustomGuids.ShamanBattleMasterHexTempleSwordFeature);
+                    addEntry("TempleSwordMartialPerformanceFeature", CustomGuids.TempleSwordMartialPerformanceFeature);
+                    addEntry("SpiritWhispererBattleMasterHexTempleSwordWeaponSpecializationFeature", CustomGuids.SpiritWhispererBattleMasterHexTempleSwordWeaponSpecializationFeature);
+                    addEntry("SpiritWhispererBattleMasterHexTempleSwordGreaterWeaponFocusFeature", CustomGuids.SpiritWhispererBattleMasterHexTempleSwordGreaterWeaponFocusFeature);
+                    addEntry("SpiritWhispererBattleMasterHexTempleSwordFeature", CustomGuids.SpiritWhispererBattleMasterHexTempleSwordFeature);
                 }
                 if (Main.ModSettings.OrcHornbow == true) {
                     Main.ModEntry.Logger.Log("Adding Orc Hornbow variants for CoTW");
 
+                    addEntry("SpiritualStandardOrcHornbow", CustomGuids.SpiritualStandardOrcHornbow);
                     addEntry("OrcHornbowFocusedWeaponAdvancedWeaponTrainingFeatureSelection", CustomGuids.OrcHornbowFocusedWeaponAdvancedWeaponTrainingFeatureSelection);
+                    addEntry("WeaponMasteryOracleRevelationOrcHornbowImprovedCriticalFeature", CustomGuids.WeaponMasteryOracleRevelationOrcHornbowImprovedCriticalFeature);
+                    addEntry("WeaponMasteryOracleRevelationOrcHornbowGreaterWeaponFocusFeature", CustomGuids.WeaponMasteryOracleRevelationOrcHornbowGreaterWeaponFocusFeature);
+                    addEntry("WeaponMasteryOracleRevelationOrcHornbowFeature", CustomGuids.WeaponMasteryOracleRevelationOrcHornbowFeature);
+                    addEntry("OracleSpiritGuideBattleMasterHexOrcHornbowWeaponSpecializationFeature", CustomGuids.OracleSpiritGuideBattleMasterHexOrcHornbowWeaponSpecializationFeature);
+                    addEntry("OracleSpiritGuideBattleMasterHexOrcHornbowGreaterWeaponFocusFeature", CustomGuids.OracleSpiritGuideBattleMasterHexOrcHornbowGreaterWeaponFocusFeature);
+                    addEntry("OracleSpiritGuideBattleMasterHexOrcHornbowFeature", CustomGuids.OracleSpiritGuideBattleMasterHexOrcHornbowFeature);
+                    addEntry("ShamanBattleMasterHexOrcHornbowWeaponSpecializationFeature", CustomGuids.ShamanBattleMasterHexOrcHornbowWeaponSpecializationFeature);
+                    addEntry("ShamanBattleMasterHexOrcHornbowGreaterWeaponFocusFeature", CustomGuids.ShamanBattleMasterHexOrcHornbowGreaterWeaponFocusFeature);
+                    addEntry("ShamanBattleMasterHexOrcHornbowFeature", CustomGuids.ShamanBattleMasterHexOrcHornbowFeature);
+                    addEntry("OrcHornbowMartialPerformanceFeature", CustomGuids.OrcHornbowMartialPerformanceFeature);
+                    addEntry("SpiritWhispererBattleMasterHexOrcHornbowWeaponSpecializationFeature", CustomGuids.SpiritWhispererBattleMasterHexOrcHornbowWeaponSpecializationFeature);
+                    addEntry("SpiritWhispererBattleMasterHexOrcHornbowGreaterWeaponFocusFeature", CustomGuids.SpiritWhispererBattleMasterHexOrcHornbowGreaterWeaponFocusFeature);
+                    addEntry("SpiritWhispererBattleMasterHexOrcHornbowFeature", CustomGuids.SpiritWhispererBattleMasterHexOrcHornbowFeature);
                 }
             }
         }

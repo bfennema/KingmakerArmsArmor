@@ -2,6 +2,7 @@ using System;
 using System.Reflection;
 using Kingmaker.Blueprints;
 using Kingmaker.EntitySystem.Entities;
+using Kingmaker.Enums;
 using UnityModManagerNet;
 
 namespace ArmsArmor

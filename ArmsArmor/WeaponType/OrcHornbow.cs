@@ -153,8 +153,8 @@ namespace ArmsArmor
             }
         }
 
-        [HarmonyLib.HarmonyPatch]
-        private static class EnumUtilsGetValuesWeaponCategoryPatch {
+        [HarmonyLib.HarmonyPatch(typeof(Enum), "GetValues", new Type[] { typeof(Type) })]
+        private static class EnumGetValuesPatch {
             private static bool Prepare() {
                 if (Main.ModSettings.OrcHornbow == false) {
                     return false;
@@ -162,13 +162,10 @@ namespace ArmsArmor
                     return true;
                 }
             }
-            static MethodBase TargetMethod() {
-                return HarmonyLib.AccessTools.Method(typeof(EnumUtils), "GetValues").MakeGenericMethod(typeof(WeaponCategory));
-            }
-            static void Postfix(ref IEnumerable<WeaponCategory> __result) {
-                var list = __result.ToList();
-                list.Add(WeaponCategoryOrcHornbow);
-                __result = list;
+            static void Postfix(Type enumType, ref Array __result) {
+                if (enumType == typeof(WeaponCategory)) {
+                    __result = __result.OfType<WeaponCategory>().Append(WeaponCategoryOrcHornbow).ToArray();
+                }
             }
         }
 

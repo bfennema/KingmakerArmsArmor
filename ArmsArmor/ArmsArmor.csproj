@@ -108,8 +108,8 @@
     <Compile Include="ActivatableAbility\TwoHand.cs" />
     <Compile Include="Buff\AspectOfTheFalcon.cs" />
     <Compile Include="Buff\HurricaneBow.cs" />
-    <Compile Include="Buff\RapidShotBuff.cs" />
-    <Compile Include="Buff\TwoHandBuff.cs" />
+    <Compile Include="Buff\RapidShot.cs" />
+    <Compile Include="Buff\TwoHand.cs" />
     <Compile Include="CallOfTheWild.cs" />
     <Compile Include="CallOfTheWildGuids.cs" />
     <Compile Include="CallOfTheWild\GreaterSnapShot.cs" />

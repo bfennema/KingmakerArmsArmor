@@ -24,7 +24,7 @@ namespace ArmsArmor
 
                 var weaponTrainingAddProficiencies = ScriptableObject.CreateInstance<WeaponTrainingAddProficiencies>();
                 weaponTrainingAddProficiencies.WeaponTrainingRankRestriction = 4;
-                weaponTrainingAddProficiencies.name = "$WeaponTrainingAddProficiencies";
+                weaponTrainingAddProficiencies.name = "$WeaponTrainingAddProficiencies$180b5e52-b504-48a1-8f30-3d999bda73a7";
 
                 var addFacts = ScriptableObject.CreateInstance<AddFacts>();
                 addFacts.Facts = new BlueprintUnitFact[0];

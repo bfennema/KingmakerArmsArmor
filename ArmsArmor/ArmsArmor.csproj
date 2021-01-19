@@ -107,6 +107,7 @@
     <Compile Include="ActivatableAbility\ShieldBash.cs" />
     <Compile Include="ActivatableAbility\TwoHand.cs" />
     <Compile Include="Buff\AspectOfTheFalcon.cs" />
+    <Compile Include="Buff\DragonStyle.cs" />
     <Compile Include="Buff\HurricaneBow.cs" />
     <Compile Include="Buff\RapidShot.cs" />
     <Compile Include="Buff\TwoHand.cs" />

@@ -64,5 +64,7 @@
         public const string PointBlankMaster = "05a3b543b0a0a0346a5061e90f293f0b";
         public const string RogueLike_NPCVendorTable = "a6bae621a7bd96b4fb3c1511cd2f9fac";
         public const string C11_OlegVendorTable = "f720440559fc00949900bfa1575196ac";
+        public const string DragonStyleToggleAbility = "2c0a8b11e3bb37c4c80c73cc0f706c84";
+        public const string DragonStyleBuff = "cc03b87fd3a797f4e953773db424cee7";
     }
 }

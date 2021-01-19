@@ -78,6 +78,7 @@ namespace ArmsArmor
                     RapidShotAbility.Init();
                     RogueLike_NPCVendorTable.Init();
                     C11_OlegVendorTable.Init();
+                    DragonStyleBuff.Init();
 #if !PATCH21
                     RapidShotBuff.Init();
 #endif

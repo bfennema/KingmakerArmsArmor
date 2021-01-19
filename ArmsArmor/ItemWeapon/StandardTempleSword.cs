@@ -55,8 +55,8 @@ namespace ArmsArmor
             new Template(CustomGuids.TempleSwordPlus5, new string[] { ExistingGuids.Enhancement5 }, ExistingGuids.SicklePlus3, 50330, "TempleSwordPlus5"),
         };
 
-        static public BlueprintItemWeapon GetBlueprint() {
-            return weapons[0].blueprint;
+        static public BlueprintItemWeapon GetBlueprint(int index) {
+            return weapons[index].blueprint;
         }
 
         static public void Init() {

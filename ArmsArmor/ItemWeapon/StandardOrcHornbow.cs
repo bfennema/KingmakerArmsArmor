@@ -55,8 +55,8 @@ namespace ArmsArmor
             new Template(CustomGuids.OrcHornbowPlus5, new string[] { ExistingGuids.Enhancement5 }, ExistingGuids.CompositeLongbowPlus4, 50820, "OrcHornbowPlus5"),
         };
 
-        static public BlueprintItemWeapon GetBlueprint() {
-            return weapons[0].blueprint;
+        static public BlueprintItemWeapon GetBlueprint(int index) {
+            return weapons[index].blueprint;
         }
 
         static public void Init() {

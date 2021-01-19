@@ -12,14 +12,14 @@ namespace ArmsArmor
                 entries.Add(new BlueprintCategoryDefaults.CategoryDefaultEntry
                 {
                     Key = TempleSword.WeaponCategoryTempleSword,
-                    DefaultWeapon = StandardTempleSword.GetBlueprint()
+                    DefaultWeapon = StandardTempleSword.GetBlueprint(0)
                 });
             }
             if (Main.ModSettings.OrcHornbow == true) {
                 entries.Add(new BlueprintCategoryDefaults.CategoryDefaultEntry
                 {
                     Key = OrcHornbow.WeaponCategoryOrcHornbow,
-                    DefaultWeapon = StandardOrcHornbow.GetBlueprint()
+                    DefaultWeapon = StandardOrcHornbow.GetBlueprint(0)
                 });
             }
             blueprint.Entries = entries.ToArray();

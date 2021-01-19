@@ -62,5 +62,7 @@
         public const string ArcheryBonusesLesser = "1440703181bc6e54487b4673e73af34e";
         public const string MonkClass = "e8f21e5b58e0569468e420ebea456124";
         public const string PointBlankMaster = "05a3b543b0a0a0346a5061e90f293f0b";
+        public const string RogueLike_NPCVendorTable = "a6bae621a7bd96b4fb3c1511cd2f9fac";
+        public const string C11_OlegVendorTable = "f720440559fc00949900bfa1575196ac";
     }
 }

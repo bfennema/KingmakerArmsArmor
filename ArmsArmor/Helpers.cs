@@ -9,6 +9,7 @@ using Kingmaker.Blueprints.Items.Ecnchantments;
 using Kingmaker.Blueprints.Items.Equipment;
 using Kingmaker.Blueprints.Items.Shields;
 using Kingmaker.Blueprints.Items.Weapons;
+using Kingmaker.Blueprints.Loot;
 using Kingmaker.Enums;
 using Kingmaker.Enums.Damage;
 using Kingmaker.Localization;
@@ -242,6 +243,19 @@ namespace ArmsArmor
 
         static public readonly HarmonyLib.AccessTools.FieldRef<MultiSet<WeaponCategory>, Dictionary<WeaponCategory, int>> MultiSetWeaponCategoryData =
             HarmonyLib.AccessTools.FieldRefAccess<MultiSet<WeaponCategory>, Dictionary<WeaponCategory, int>>("m_Data");
+
+
+        // LootItemsPackFixed
+        static public readonly HarmonyLib.AccessTools.FieldRef<LootItemsPackFixed, LootItem> LootItemsPackFixedItem =
+            HarmonyLib.AccessTools.FieldRefAccess<LootItemsPackFixed, LootItem>("m_Item");
+
+        static public readonly HarmonyLib.AccessTools.FieldRef<LootItemsPackFixed, int> LootItemsPackFixedCount =
+            HarmonyLib.AccessTools.FieldRefAccess<LootItemsPackFixed, int>("m_Count");
+
+
+        // LootItem
+        static public readonly HarmonyLib.AccessTools.FieldRef<LootItem, BlueprintItem> LootItemItem =
+            HarmonyLib.AccessTools.FieldRefAccess<LootItem, BlueprintItem>("m_Item");
 
 
         // AddParametrizedFeatures

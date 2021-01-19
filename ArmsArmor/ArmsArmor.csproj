@@ -197,6 +197,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="UI.cs" />
+    <Compile Include="VendorTable\C11_Oleg.cs" />
+    <Compile Include="VendorTable\RogueLike_NPC.cs" />
     <Compile Include="WeaponType\HeavyShield.cs" />
     <Compile Include="WeaponType\LightShield.cs" />
     <Compile Include="WeaponType\OrcHornbow.cs" />

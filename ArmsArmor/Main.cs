@@ -76,6 +76,8 @@ namespace ArmsArmor
                     ImprovedShieldBash.Init();
                     ShieldBashAbility.Init();
                     RapidShotAbility.Init();
+                    RogueLike_NPCVendorTable.Init();
+                    C11_OlegVendorTable.Init();
 #if !PATCH21
                     RapidShotBuff.Init();
 #endif

@@ -106,11 +106,14 @@
     <Compile Include="ActivatableAbility\RapidShot.cs" />
     <Compile Include="ActivatableAbility\ShieldBash.cs" />
     <Compile Include="ActivatableAbility\TwoHand.cs" />
+    <Compile Include="ActivatableAbility\UpsettingShieldStyle.cs" />
     <Compile Include="Buff\AspectOfTheFalcon.cs" />
     <Compile Include="Buff\DragonStyle.cs" />
     <Compile Include="Buff\HurricaneBow.cs" />
     <Compile Include="Buff\RapidShot.cs" />
     <Compile Include="Buff\TwoHand.cs" />
+    <Compile Include="Buff\UpsettingShieldStyle.cs" />
+    <Compile Include="Buff\UpsettingShieldStyleAttackBonusBuff.cs" />
     <Compile Include="CallOfTheWild.cs" />
     <Compile Include="CallOfTheWildGuids.cs" />
     <Compile Include="CallOfTheWild\GreaterSnapShot.cs" />
@@ -148,6 +151,7 @@
     <Compile Include="Feature\RubyPhoenix.cs" />
     <Compile Include="Feature\ShieldMaster.cs" />
     <Compile Include="Feature\TempleSwordProficiency.cs" />
+    <Compile Include="Feature\UpsettingShieldStyle.cs" />
     <Compile Include="Feature\WeaponFocusOrcHornbow.cs" />
     <Compile Include="Feature\WeaponFocusTempleSword.cs" />
     <Compile Include="FeatureSelection\ExoticWeaponProficiencySelection.cs" />
@@ -173,6 +177,7 @@
     <Compile Include="ItemWeapon\BashingShieldWeapon.cs" />
     <Compile Include="ItemWeapon\StandardOrcHornbow.cs" />
     <Compile Include="ItemWeapon\StandardTempleSword.cs" />
+    <Compile Include="ItemWeapon\StandardWeaponBuckler.cs" />
     <Compile Include="LocalizedString.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Mechanics\DisarmBasicMechanics.cs" />
@@ -182,20 +187,24 @@
     <Compile Include="Mechanics\SunderBasicMechanics.cs" />
     <Compile Include="Mechanics\TripBasicMechanics.cs" />
     <Compile Include="Mechanics\TwoWeaponFighting.cs" />
+    <Compile Include="Patches\BashingFinish.cs" />
     <Compile Include="Patches\BlueprintItemShield.cs" />
     <Compile Include="Patches\BlueprintWeaponType.cs" />
     <Compile Include="Patches\CharSAttack.cs" />
+    <Compile Include="Patches\CharSheetWeapons.cs" />
     <Compile Include="Patches\EquipSlot.cs" />
     <Compile Include="Patches\HandSlot.cs" />
     <Compile Include="Patches\ItemEntity.cs" />
     <Compile Include="Patches\ItemEntityArmor.cs" />
     <Compile Include="Patches\ItemEntityShield.cs" />
     <Compile Include="Patches\ItemEntityWeapon.cs" />
+    <Compile Include="Patches\RuleCalculateAttacksCount.cs" />
     <Compile Include="Patches\TwoWeaponFightingAttackPenalty.cs" />
     <Compile Include="Patches\UIUtilityItem.cs" />
     <Compile Include="Patches\ZenArcher.cs" />
     <Compile Include="Progression\BasicFeatsProgression.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Selection\FeatSelection.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="UI.cs" />
     <Compile Include="VendorTable\C11_Oleg.cs" />
@@ -204,6 +213,7 @@
     <Compile Include="WeaponType\LightShield.cs" />
     <Compile Include="WeaponType\OrcHornbow.cs" />
     <Compile Include="WeaponType\TempleSword.cs" />
+    <Compile Include="WeaponType\WeaponBuckler.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -35,6 +35,12 @@
         public const string WeaponLightShield = "1fd965e522502fe479fdd423cca07684";
         public const string WeaponHeavyShield = "be9b6408e6101cb4997a8996484baf19";
         public const string BasicFeatsProgression = "5b72dd2ca2cb73b49903806ee8986325";
+        public const string BasicFeatSelection = "247a4068296e8be42890143f451b4b45";
+        public const string CombatTrick = "c5158a6622d0b694a99efb1d0025d2c1";
+        public const string EldritchKnightFeatSelection = "da03141df23f3fe45b0c7c323a8e5a0e";
+        public const string FighterFeatSelection = "41c8486641f7d6d4283ca9dae4147a9f";
+        public const string MagusFeatSelection = "66befe7b24c42dd458952e3c47c93563";
+        public const string WarDomainGreaterFeatSelection = "79c6421dbdb028c4fa0c31b8eea95f16";
         public const string BashingShieldWeapon = "d7fb623f94b42304db03645c6fdef245";
         public const string StandardSpikedLightShield = "b12650bdb547d7e499cdc29e913088cb";
         public const string StandardSpikedHeavyShield = "7c8f6712c444cf446a4bd3b8b717cb5c";
@@ -66,5 +72,8 @@
         public const string C11_OlegVendorTable = "f720440559fc00949900bfa1575196ac";
         public const string DragonStyleToggleAbility = "2c0a8b11e3bb37c4c80c73cc0f706c84";
         public const string DragonStyleBuff = "cc03b87fd3a797f4e953773db424cee7";
+        public const string BucklerType = "26fcc43f7d20374498d2e1643381d345";
+        public const string StandardWeaponLightShield = "62c90581f9892e9468f0d8229c7321c4";
+        public const string DefensiveCombatTraining = "479c7f3b0dba69a4bbcb43e101f3f7f9";
     }
 }

@@ -53,6 +53,8 @@ namespace ArmsArmor
             AddString(StringGuids.TwoHandDescription, "Wield a one-handed weapon with two hands.\nWhen a one-handed weapon is wielded with two hands during melee combat, 1-1/2 times the character’s Strength bonus is added to damage rolls.\nRapiers cannot be wielded with two hands.");
             AddString(StringGuids.OrcHornbowWayOfTheBowFeature, "Way of the Bow: Orc Hornbow");
             AddString(StringGuids.OrcHornbowWayOfTheBow6Feature, "Way of the Bow (Weapon Specialization: Orc Hornbow)");
+            AddString(StringGuids.UpsettingShieldStyle, "Upsetting Shield Style");
+            AddString(StringGuids.UpsettingShieldStyleDescription, "You can shield bash with a buckler as if it were a light shield, and you can use the buckler in conjunction with any feats or abilities that normally apply to light shields.\nWhile using this style, whenever you successfully deal damage to an opponent with a shield bash using your buckler, that opponent takes a –2 penalty on all attack rolls made against you until the start of your next turn.");
         }
     }
     class StringGuids {
@@ -93,10 +95,13 @@ namespace ArmsArmor
         public const string TwoHandDescription = "6c38be03-d665-49d2-b473-71167d2f8c40";
         public const string OrcHornbowWayOfTheBowFeature = "4683f66d-047b-4683-a9e2-ea45c001d475";
         public const string OrcHornbowWayOfTheBow6Feature = "005a8138-572f-4b69-be60-80d05df6170d";
+        public const string UpsettingShieldStyle = "ff56e56f-b1f0-4ddc-ade3-f04d01cca12e";
+        public const string UpsettingShieldStyleDescription = "76b6e809-7864-4081-b94f-b7c3608b1e2d";
 
         public const string ShieldBashFeature = "314ff56d-e93b-4915-8ca4-24a7670ad436";
         public const string SpikedLightShield = "7aa87bff-84b7-4337-9ad2-c1f6268fae0e";
         public const string SpikedHeavyShield = "3fa879e0-17e0-4d65-90b5-05c44e28a09c";
         public const string TwoWeaponFighting = "e32ce256-78dc-4fd0-bf15-21f9ebdf9921";
+        public const string Buckler = "c9230736-915f-4b43-b119-f7d0b76d24cc";
     }
 }

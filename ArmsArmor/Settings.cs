@@ -15,6 +15,7 @@ namespace ArmsArmor
         public bool Trip = true;
         public bool Sunder = true;
         public bool TwoHand = true;
+        public bool UpsettingShieldStyle = true;
 
         public override void Save(UnityModManager.ModEntry modEntry) {
             Save(this, modEntry);

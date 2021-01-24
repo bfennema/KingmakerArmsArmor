@@ -1,6 +1,7 @@
 using System;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Designers.Mechanics.Facts;
 using UnityEngine;
 
 namespace ArmsArmor
@@ -9,7 +10,7 @@ namespace ArmsArmor
         static BlueprintFeature blueprint = null;
         static private BlueprintFeature GetBlueprint() {
             if (!blueprint) {
-                var component = ScriptableObject.CreateInstance<Kingmaker.Designers.Mechanics.Facts.WeaponFocus>();
+                var component = ScriptableObject.CreateInstance<WeaponFocus>();
                 component.WeaponType = OrcHornbow.GetBlueprint();
                 component.AttackBonus = 1;
                 component.name = "$WeaponTypeAttackBonus$0150eba0-d6df-4062-88c4-6bce9ff709e0";

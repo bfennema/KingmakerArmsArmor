@@ -26,6 +26,7 @@ namespace ArmsArmor
                 RenderCheckbox(ref Main.ModSettings.Sunder, "Add Sunder Combat Combat Maneuver without Improved Sunder Feat.");
                 RenderCheckbox(ref Main.ModSettings.Trip, "Add Trip Combat Combat Maneuver without Improved Trip Feat.");
                 RenderCheckbox(ref Main.ModSettings.TwoHand, "Add toggle for switching between one handing and two handing weapons.");
+                RenderCheckbox(ref Main.ModSettings.UpsettingShieldStyle, "Add Upsetting Shield Style feat");
 
                 RenderLabel("NOTE: Must restart game after making changes.");
             }

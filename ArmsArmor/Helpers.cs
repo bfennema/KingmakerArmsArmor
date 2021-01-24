@@ -17,7 +17,9 @@ using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UI.ServiceWindow;
 using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
+using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
 using Kingmaker.Visual.CharacterSystem;
@@ -221,6 +223,11 @@ namespace ArmsArmor
         static public void SetBlueprintBuffFlags(BlueprintBuff buff, int flags) {
             HarmonyLib.AccessTools.Field(typeof(BlueprintBuff), "m_Flags").SetValue(buff, flags);
         }
+
+
+        // BlueprintActivatableAbility
+        static public readonly HarmonyLib.AccessTools.FieldRef<BlueprintActivatableAbility, UnitCommand.CommandType> BlueprintActivatableAbilityActivateWithUnitCommand =
+            HarmonyLib.AccessTools.FieldRefAccess<BlueprintActivatableAbility, UnitCommand.CommandType>("m_ActivateWithUnitCommand");
 
 
         // EquipSlot

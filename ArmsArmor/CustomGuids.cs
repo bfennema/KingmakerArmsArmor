@@ -97,5 +97,11 @@
         public const string CombatCompetenceProficiencySpears = "a2b0f34267da4e17af7e0add63d3e135";
         public const string CombatCompetenceProficiencyThrown = "b5e92c7bdb9548afac10517758bc5bc1";
         public const string CombatCompetenceProficiencyClose = "2efc49caac134b20a0b5ec25d82c5f35";
+        public const string StandardWeaponBuckler = "7a6b82a2a6294d76b4de88380f484403";
+        public const string WeaponBuckler = "59155f3e59474a61b9784f28da72d524";
+        public const string UpsettingShieldStyleFeat = "fdb923b8fe3c4f79b249067edc6f2cb3";
+        public const string UpsettingShieldStyleAbility = "6c3156bb64ac4c15ba75d024594885ae";
+        public const string UpsettingShieldStyleBuff = "b6555896e7fe470d86f7a74a2194a4b9";
+        public const string UpsettingShieldStyleAttackBonusBuff = "ec039aed12e84112b60e208a64fb802f";
     }
 }

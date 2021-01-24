@@ -38,6 +38,7 @@ namespace ArmsArmor
                     CallOfTheWild.Init();
                     LocalizedStringHelper.Init();
                     BasicFeatsProgression.Init();
+                    FeatSelection.Init();
                     WeaponTrainingSelection.Init();
                     ExoticWeaponProficiencySelection.Init();
                     if (ModSettings.TempleSword == true) {
@@ -56,6 +57,9 @@ namespace ArmsArmor
                         ArcheryBonusesFeature.Init();
                         ArcheryBonusesLesserFeature.Init();
                         RubyPhoenixFeature.Init();
+                    }
+                    if (ModSettings.UpsettingShieldStyle) {
+                        StandardWeaponBuckler.Init();
                     }
                     DefaultsForWeaponCategories.Init();
                     CombatCompetenceProficiencies.Init();

@@ -23,10 +23,15 @@ namespace ArmsArmor
                             break;
                         }
                     }
+                    Helpers.BlueprintUnitFactDisplayName(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.ImprovedDisarm);
                     Helpers.BlueprintUnitFactDescription(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.ImprovedDisarmDescription);
                 }
             }
             return blueprint;
+        }
+
+        static public void Init() {
+            GetBlueprint();
         }
     }
 }

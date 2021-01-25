@@ -78,6 +78,9 @@ namespace ArmsArmor
                     ShieldMasterFeature.Init();
                     TwoWeaponFightingBasicMechanics.Init();
                     ImprovedShieldBash.Init();
+                    ImprovedDisarm.Init();
+                    ImprovedTrip.Init();
+                    ImprovedSunderArmor.Init();
                     ShieldBashAbility.Init();
                     RapidShotAbility.Init();
                     RogueLike_NPCVendorTable.Init();

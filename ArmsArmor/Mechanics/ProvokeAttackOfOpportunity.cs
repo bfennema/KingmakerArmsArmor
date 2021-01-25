@@ -1,6 +1,6 @@
-﻿using Kingmaker;
-using Kingmaker.Blueprints;
+﻿using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Facts;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
 
@@ -11,8 +11,8 @@ namespace ArmsArmor
     public class ProvokeAttackOfOpportunity : RuleInitiatorLogicComponent<RuleCombatManeuver>
     {
         public override void OnEventAboutToTrigger(RuleCombatManeuver evt) {
-            if (evt.Type == Type && !base.Owner.HasFact(Feature)) {
-                Game.Instance.CombatEngagementController.ForceAttackOfOpportunity(evt.Target, evt.Initiator);
+            if (evt.Type == Type && evt.Reason?.Ability?.Blueprint == Ability && !base.Owner.HasFact(Feature)) {
+                Helpers.ImmediateAttackOfOpportunity(evt.Target.CombatState, evt.Initiator);
             }
         }
 
@@ -20,6 +20,7 @@ namespace ArmsArmor
         }
 
         public BlueprintFeature Feature;
+        public BlueprintUnitFact Ability;
         public CombatManeuver Type = CombatManeuver.Trip;
     }
 }

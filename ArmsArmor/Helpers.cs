@@ -10,10 +10,14 @@ using Kingmaker.Blueprints.Items.Equipment;
 using Kingmaker.Blueprints.Items.Shields;
 using Kingmaker.Blueprints.Items.Weapons;
 using Kingmaker.Blueprints.Loot;
+using Kingmaker.Controllers.Combat;
+using Kingmaker.EntitySystem.Entities;
 using Kingmaker.Enums;
 using Kingmaker.Enums.Damage;
 using Kingmaker.Localization;
+using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem;
+using Kingmaker.RuleSystem.Rules;
 using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UI.ServiceWindow;
 using Kingmaker.UnitLogic;
@@ -21,6 +25,7 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.UnitLogic.Parts;
 using Kingmaker.Utility;
 using Kingmaker.Visual.CharacterSystem;
 using UnityEngine;
@@ -291,6 +296,57 @@ namespace ArmsArmor
             return weapon.Category == WeaponCategory.BastardSword
                 || weapon.Category == WeaponCategory.DwarvenWaraxe
                 || weapon.Category == WeaponCategory.Estoc;
+        }
+
+
+        // Immediately trigger Attack of Opportunity
+        static public bool ImmediateAttackOfOpportunity(UnitCombatState initiator, UnitEntityData target) {
+            if (initiator.PreventAttacksOfOpporunityNextFrame || target.CombatState.PreventAttacksOfOpporunityNextFrame) {
+                return false;
+            }
+            if (target.Descriptor.State.IsDead) {
+                return false;
+            }
+            if ((!initiator.CanActInCombat && !initiator.Unit.Descriptor.State.HasCondition(UnitCondition.AttackOfOpportunityBeforeInitiative)) || !initiator.CanAttackOfOpportunity || !initiator.Unit.Descriptor.State.CanAct) {
+                return false;
+            }
+            UnitPartForceMove unitPartForceMove = target.Get<UnitPartForceMove>();
+            if (unitPartForceMove && !unitPartForceMove.ProvokeAttackOfOpportunity) {
+                return false;
+            }
+            if (UnitCommand.CommandTargetUntargetable(initiator.Unit, target, null)) {
+                return false;
+            }
+            if (initiator.Unit.HasMotionThisTick) {
+                return false;
+            }
+            if (initiator.Unit.GetThreatHand() == null) {
+                return false;
+            }
+            if (initiator.AttackOfOpportunityCount <= 0) {
+                return false;
+            }
+            if (!target.Memory.Contains(initiator.Unit)) {
+                return false;
+            }
+            if (target.Descriptor.State.HasCondition(UnitCondition.ImmuneToAttackOfOpportunity)) {
+                return false;
+            }
+
+            EventBus.RaiseEvent<IAttackOfOpportunityHandler>(delegate (IAttackOfOpportunityHandler h)
+            {
+                h.HandleAttackOfOpportunity(initiator.Unit, target);
+            });
+            Rulebook.Trigger<RuleAttackWithWeapon>(new RuleAttackWithWeapon(initiator.Unit, target, initiator.Unit.GetThreatHand().Weapon, 0)
+            {
+                IsAttackOfOpportunity = true
+            });
+            if (initiator.AttackOfOpportunityCount == initiator.AttackOfOpportunityPerRound) {
+                initiator.Cooldown.AttackOfOpportunity = 5.39999962f;
+            }
+            initiator.AttackOfOpportunityCount--;
+
+            return true;
         }
     }
 }

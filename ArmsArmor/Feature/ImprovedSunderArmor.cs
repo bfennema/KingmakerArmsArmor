@@ -6,13 +6,13 @@ using Kingmaker.UnitLogic.FactLogic;
 
 namespace ArmsArmor
 {
-    public class ImprovedSunder {
+    public class ImprovedSunderArmor {
         static BlueprintFeature blueprint = null;
         static private BlueprintFeature GetBlueprint() {
             if (!blueprint) {
-                blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>(ExistingGuids.ImprovedSunder);
+                blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>(ExistingGuids.ImprovedSunderArmor);
                 if (Main.ModSettings.Sunder) {
-                    var shieldBashAbility = ResourcesLibrary.TryGetBlueprint<BlueprintAbility>(ExistingGuids.SunderAction);
+                    var shieldBashAbility = ResourcesLibrary.TryGetBlueprint<BlueprintAbility>(ExistingGuids.SunderArmorAction);
                     for (int i = 0; i < blueprint.ComponentsArray.Length; i++) {
                         if (blueprint.ComponentsArray[i] is AddFacts component) {
                             if (component.Facts.Contains(shieldBashAbility)) {
@@ -23,10 +23,15 @@ namespace ArmsArmor
                             break;
                         }
                     }
-                    Helpers.BlueprintUnitFactDescription(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.ImprovedSunderDescription);
+                    Helpers.BlueprintUnitFactDisplayName(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.ImprovedSunderArmor);
+                    Helpers.BlueprintUnitFactDescription(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.ImprovedSunderArmorDescription);
                 }
             }
             return blueprint;
+        }
+
+        static public void Init() {
+            GetBlueprint();
         }
     }
 }

@@ -142,7 +142,7 @@
     <Compile Include="Feature\OrcHornbowProficiencyBracersOfArchery.cs" />
     <Compile Include="Feature\ImprovedDisarm.cs" />
     <Compile Include="Feature\ImprovedShieldBash.cs" />
-    <Compile Include="Feature\ImprovedSunder.cs" />
+    <Compile Include="Feature\ImprovedSunderArmor.cs" />
     <Compile Include="Feature\ImprovedTrip.cs" />
     <Compile Include="Feature\MartialWeaponProficiency.cs" />
     <Compile Include="Feature\MonkWeaponProficiency.cs" />

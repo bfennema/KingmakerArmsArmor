@@ -109,6 +109,8 @@ namespace ArmsArmor
                 SnapShotFeature.Init();
                 ImprovedSnapShotFeature.Init();
                 GreaterSnapShotFeature.Init();
+                PinpointTargetingBuff.Init();
+                TargetOfOpportunityAttackAbility.Init();
             }
         }
 
@@ -211,6 +213,12 @@ namespace ArmsArmor
 
         static bool AddPostfix(string typeName, string funcName, Type[] parameters = null, string postfixName = null) {
             var type = assembly.GetType("CallOfTheWild." + typeName);
+            if (type == null) {
+                type = assembly.GetType("CallOfTheWild+" + typeName);
+            }
+            if (type == null) {
+                Main.ModEntry.Logger.Log($"AddPostfix: assembly.GetType(\"CallOfTheWild[.+]{typeName}\") returned null");
+            }
             return type != null && AddPostfix(type, funcName, parameters, postfixName);
         }
 

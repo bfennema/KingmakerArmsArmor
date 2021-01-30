@@ -24,9 +24,11 @@ namespace ArmsArmor
                 Helpers.BlueprintUnitFactDisplayName(blueprint) = new LocalizedString();
                 Helpers.BlueprintUnitFactDescription(blueprint) = new LocalizedString();
                 CopyFromBlueprint(blueprint, ExistingGuids.DefensiveCombatTraining);
+                var condition = ScriptableObject.CreateInstance<ContextConditionIsCaster>();
+                condition.name = "$ContextConditionIsCaster$e400a04f-a3d8-4212-93ff-88a08cfb1f29";
                 var component = ScriptableObject.CreateInstance<AttackBonusConditional>();
                 component.Bonus = new ContextValue { Value = -2 };
-                component.Conditions = new ConditionsChecker { Conditions = new Condition[] { new ContextConditionIsCaster { name = "$ContextConditionIsCaster$e400a04f-a3d8-4212-93ff-88a08cfb1f29" } } };
+                component.Conditions = new ConditionsChecker { Conditions = new Condition[] { condition } };
                 component.name = "$AttackBonusConditional$a0a45462-8865-4d7e-bb2c-e9c86910fd16";
                 blueprint.ComponentsArray = new BlueprintComponent[] { component };
                 Helpers.BlueprintScriptableObjectAssetGuid(blueprint) = CustomGuids.UpsettingShieldStyleAttackBonusBuff;

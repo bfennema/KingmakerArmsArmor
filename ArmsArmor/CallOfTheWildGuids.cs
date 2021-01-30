@@ -13,5 +13,7 @@
         public const string SnapShotFeature = "cd0f3d027f524388816392715ff65488";
         public const string ImprovedSnapShotFeature = "9ee609ba035a4b7db7c8e321337a2e5b";
         public const string GreaterSnapShotFeature = "865343e8f56646bc8d10d36c230e1663";
+        public const string PinpointTargetingBuff = "9f7a82aaf5d542deb0753c59b79f31e1";
+        public const string TargetOfOpportunityAttackAbility = "d623647d785a4e72ad1d313c3c704e8f";
     }
 }

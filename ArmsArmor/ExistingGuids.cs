@@ -75,5 +75,6 @@
         public const string BucklerType = "26fcc43f7d20374498d2e1643381d345";
         public const string StandardWeaponLightShield = "62c90581f9892e9468f0d8229c7321c4";
         public const string DefensiveCombatTraining = "479c7f3b0dba69a4bbcb43e101f3f7f9";
+        public const string CombatReflexes = "0f8939ae6f220984e8fb568abbdfba95";
     }
 }

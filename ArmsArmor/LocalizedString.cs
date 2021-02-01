@@ -55,6 +55,10 @@ namespace ArmsArmor
             AddString(StringGuids.OrcHornbowWayOfTheBow6Feature, "Way of the Bow (Weapon Specialization: Orc Hornbow)");
             AddString(StringGuids.UpsettingShieldStyle, "Upsetting Shield Style");
             AddString(StringGuids.UpsettingShieldStyleDescription, "You can shield bash with a buckler as if it were a light shield, and you can use the buckler in conjunction with any feats or abilities that normally apply to light shields.\nWhile using this style, whenever you successfully deal damage to an opponent with a shield bash using your buckler, that opponent takes a –2 penalty on all attack rolls made against you until the start of your next turn.");
+            AddString(StringGuids.UpsettingStrike, "Upsetting Strike");
+            AddString(StringGuids.UpsettingStrikeDescription, "While you are using Upsetting Shield Style, if a foe is taking a penalty on attack rolls against you as a result of Upsetting Shield Style, and that foe makes a melee attack roll against you that misses your AC by 5 or more, that foe provokes an attack of opportunity from you.");
+            AddString(StringGuids.UpsettingVengeance, "Upsetting Vengeance");
+            AddString(StringGuids.UpsettingVengeanceDescription, "While using Upsetting Shield Style, the penalty on attack rolls foes take for being hit by your shield bash attack applies to their attacks against any target. If an adjacent foe taking this penalty makes an attack roll against any target and misses the target’s AC by 5 or more, that foe provokes an attack of opportunity from you. You can only make one attack of opportunity against an opponent as a result of this feat or Upsetting Strike each round.");
         }
     }
     class StringGuids {
@@ -97,6 +101,10 @@ namespace ArmsArmor
         public const string OrcHornbowWayOfTheBow6Feature = "005a8138-572f-4b69-be60-80d05df6170d";
         public const string UpsettingShieldStyle = "ff56e56f-b1f0-4ddc-ade3-f04d01cca12e";
         public const string UpsettingShieldStyleDescription = "76b6e809-7864-4081-b94f-b7c3608b1e2d";
+        public const string UpsettingStrike = "bf2a184a-928d-4620-9e0b-6b3f98efb818";
+        public const string UpsettingStrikeDescription = "4f4b2b9a-3f71-4921-880f-9cde98fdbcff";
+        public const string UpsettingVengeance = "9e76694d-3a2c-4331-a8a4-7fcf950a6d4d";
+        public const string UpsettingVengeanceDescription = "a4c39cca-35e7-4d3e-a640-2057f290516e";
 
         public const string TripFeature = "9283fcc1-ba37-4711-93ac-6de17415e10f";
         public const string DisarmFeature = "d7f35120-78b5-4656-b045-17b9b6b3635c";

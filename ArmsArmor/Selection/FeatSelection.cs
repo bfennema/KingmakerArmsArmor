@@ -23,6 +23,8 @@ namespace ArmsArmor
 
             var mechanics = new Mechanics[] {
                 new Mechanics() { feature = UpsettingShieldStyleFeat.GetBlueprint(), enable = Main.ModSettings.UpsettingShieldStyle },
+                new Mechanics() { feature = UpsettingStrikeFeat.GetBlueprint(), enable = Main.ModSettings.UpsettingShieldStyle },
+                new Mechanics() { feature = UpsettingVengeanceFeat.GetBlueprint(), enable = Main.ModSettings.UpsettingShieldStyle },
             };
 
             foreach (var guid in guids) {

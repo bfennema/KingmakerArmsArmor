@@ -103,5 +103,7 @@
         public const string UpsettingShieldStyleAbility = "6c3156bb64ac4c15ba75d024594885ae";
         public const string UpsettingShieldStyleBuff = "b6555896e7fe470d86f7a74a2194a4b9";
         public const string UpsettingShieldStyleAttackBonusBuff = "ec039aed12e84112b60e208a64fb802f";
+        public const string UpsettingStrikeFeat = "87de3a58389a435c8d1238b31c9f77bc";
+        public const string UpsettingVengeanceFeat = "865992fd-b31f-4169-b31a-9f476343d69b";
     }
 }

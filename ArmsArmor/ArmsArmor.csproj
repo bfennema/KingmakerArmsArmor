@@ -128,6 +128,7 @@
     <Compile Include="CallOfTheWild\ZenArcherPointBlankMaster.cs" />
     <Compile Include="CallOfTheWild\WayOfTheBow.cs" />
     <Compile Include="CategoryDefaults\DefaultsForWeaponCategories.cs" />
+    <Compile Include="Components\AddInitiatorAttackWithWeaponBuff.cs" />
     <Compile Include="CustomGuids.cs" />
     <Compile Include="EquipmentEnchantment\BashingEnchantment.cs" />
     <Compile Include="EquipmentEnchantment\BashingWeaponEnchantment.cs" />
@@ -154,6 +155,8 @@
     <Compile Include="Feature\ShieldMaster.cs" />
     <Compile Include="Feature\TempleSwordProficiency.cs" />
     <Compile Include="Feature\UpsettingShieldStyle.cs" />
+    <Compile Include="Feature\UpsettingStrike.cs" />
+    <Compile Include="Feature\UpsettingVengeance.cs" />
     <Compile Include="Feature\WeaponFocusOrcHornbow.cs" />
     <Compile Include="Feature\WeaponFocusTempleSword.cs" />
     <Compile Include="FeatureSelection\ExoticWeaponProficiencySelection.cs" />
@@ -162,6 +165,7 @@
     <Compile Include="GameLogicComponent\BashingLogic.cs" />
     <Compile Include="GameLogicComponent\BashingWeaponLogic.cs" />
     <Compile Include="GameLogicComponent\ImpactLogic.cs" />
+    <Compile Include="GameLogicComponent\MissProvokeAttackCaster.cs" />
     <Compile Include="GameLogicComponent\ReduceOversizedPenaltyLogic.cs" />
     <Compile Include="GameLogicComponent\ShieldMasterLogic.cs" />
     <Compile Include="GameLogicComponent\WeaponParametersAttackBonusLogic.cs" />

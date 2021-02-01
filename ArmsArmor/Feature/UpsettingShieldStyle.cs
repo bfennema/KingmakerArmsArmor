@@ -14,6 +14,8 @@ namespace ArmsArmor
         static BlueprintFeature blueprint = null;
         static public BlueprintFeature GetBlueprint() {
             if (!blueprint) {
+                blueprint = ScriptableObject.CreateInstance<BlueprintFeature>();
+
                 var prerequisiteProficiency = ScriptableObject.CreateInstance<PrerequisiteProficiency>();
                 prerequisiteProficiency.ArmorProficiencies = new ArmorProficiencyGroup[] { ArmorProficiencyGroup.Buckler };
                 prerequisiteProficiency.WeaponProficiencies = new WeaponCategory[0];
@@ -28,7 +30,6 @@ namespace ArmsArmor
                 addFacts.Facts = new BlueprintUnitFact[] { UpsettingShieldStyleToggleAbility.GetBlueprint() };
                 addFacts.name = "$AddFacts$abf99725-603a-421a-a503-8db7c7e69f8c";
 
-                blueprint = ScriptableObject.CreateInstance<BlueprintFeature>();
                 blueprint.Groups = new FeatureGroup[] { FeatureGroup.CombatFeat, FeatureGroup.StyleFeat, FeatureGroup.Feat };
                 blueprint.Ranks = 1;
                 blueprint.IsClassFeature = true;

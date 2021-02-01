@@ -9,9 +9,11 @@ namespace ArmsArmor
             public BlueprintFeature feature;
             public bool enable;
         }
+
         static public void Init() {
             Update(null);
         }
+
         static public void Update(UnitDescriptor unit) {
             var blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintProgression>(ExistingGuids.BasicFeatsProgression);
             var mechanics = new Mechanics[] {

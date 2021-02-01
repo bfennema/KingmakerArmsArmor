@@ -30,12 +30,13 @@ namespace ArmsArmor
 
         [HarmonyLib.HarmonyPatch(typeof(LibraryScriptableObject), "LoadDictionary")]
         static class LibraryScriptableObjectLoadDictionaryPatch {
-            static void Prefix(bool ___m_Initialized, ref bool __state) {
+            static void Prefix(bool ___m_Initialized, out bool __state) {
                 __state = ___m_Initialized;
             }
             static void Postfix(bool __state) {
                 if (!__state) {
                     CallOfTheWild.Init();
+                    ProperFlanking20.Init();
                     LocalizedStringHelper.Init();
                     BasicFeatsProgression.Init();
                     FeatSelection.Init();
@@ -78,9 +79,11 @@ namespace ArmsArmor
                     ShieldMasterFeature.Init();
                     TwoWeaponFightingBasicMechanics.Init();
                     ImprovedShieldBash.Init();
-                    ImprovedDisarm.Init();
-                    ImprovedTrip.Init();
-                    ImprovedSunderArmor.Init();
+                    if (!ProperFlanking20.IsActive) {
+                        ImprovedDisarm.Init();
+                        ImprovedTrip.Init();
+                        ImprovedSunderArmor.Init();
+                    }
                     ShieldBashAbility.Init();
                     RapidShotAbility.Init();
                     RogueLike_NPCVendorTable.Init();
@@ -89,6 +92,15 @@ namespace ArmsArmor
 #if !PATCH21
                     RapidShotBuff.Init();
 #endif
+                }
+            }
+            [HarmonyLib.HarmonyPostfix]
+            [HarmonyLib.HarmonyPatch("LoadDictionary")]
+            [HarmonyLib.HarmonyPriority(HarmonyLib.Priority.Last)]
+            static void PostfixLast(bool __state) {
+                if (!__state) {
+                    CallOfTheWild.LoadDictionary();
+                    ProperFlanking20.LoadDictionary();
                 }
             }
         }

@@ -209,6 +209,8 @@
     <Compile Include="Patches\UIUtilityItem.cs" />
     <Compile Include="Patches\ZenArcher.cs" />
     <Compile Include="Progression\BasicFeatsProgression.cs" />
+    <Compile Include="ProperFlanking20.cs" />
+    <Compile Include="ProperFlanking20Guids.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Selection\FeatSelection.cs" />
     <Compile Include="Settings.cs" />

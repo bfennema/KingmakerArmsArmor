@@ -12,15 +12,17 @@ namespace ArmsArmor
             if (!blueprint) {
                 blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>(ExistingGuids.ImprovedSunderArmor);
                 if (Main.ModSettings.Sunder) {
-                    var shieldBashAbility = ResourcesLibrary.TryGetBlueprint<BlueprintAbility>(ExistingGuids.SunderArmorAction);
-                    for (int i = 0; i < blueprint.ComponentsArray.Length; i++) {
-                        if (blueprint.ComponentsArray[i] is AddFacts component) {
-                            if (component.Facts.Contains(shieldBashAbility)) {
-                                var list = blueprint.ComponentsArray.ToList();
-                                list.Remove(component);
-                                blueprint.ComponentsArray = list.ToArray();
+                    if (!ProperFlanking20.IsActive) {
+                        var sunderArmorAction = ResourcesLibrary.TryGetBlueprint<BlueprintAbility>(ExistingGuids.SunderArmorAction);
+                        for (int i = 0; i < blueprint.ComponentsArray.Length; i++) {
+                            if (blueprint.ComponentsArray[i] is AddFacts component) {
+                                if (component.Facts.Contains(sunderArmorAction)) {
+                                    var list = blueprint.ComponentsArray.ToList();
+                                    list.Remove(component);
+                                    blueprint.ComponentsArray = list.ToArray();
+                                }
+                                break;
                             }
-                            break;
                         }
                     }
                     Helpers.BlueprintUnitFactDisplayName(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.ImprovedSunderArmor);

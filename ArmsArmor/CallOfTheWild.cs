@@ -95,7 +95,7 @@ namespace ArmsArmor
             }
         }
 
-        static void LoadDictionaryPostfix() {
+        static public void LoadDictionary() {
             if (dictionary == false) {
                 dictionary = true;
                 ZenArcheryFeature.Init();
@@ -249,8 +249,6 @@ namespace ArmsArmor
             assembly = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault(a => a.GetName().Name == "CallOfTheWild");
 
             if (IsActive) {
-                AddPostfix("Main+LibraryScriptableObject_LoadDictionary_Patch", "Postfix", new Type[] { typeof(LibraryScriptableObject) }, nameof(LoadDictionaryPostfix));
-
                 var GuidStorage = assembly.GetType("CallOfTheWild.Helpers+GuidStorage");
                 AddPostfix(GuidStorage, "load", new Type[] { typeof(string), typeof(bool) }, nameof(LoadPostfix));
 

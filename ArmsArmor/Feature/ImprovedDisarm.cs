@@ -12,15 +12,17 @@ namespace ArmsArmor
             if (!blueprint) {
                 blueprint = ResourcesLibrary.TryGetBlueprint<BlueprintFeature>(ExistingGuids.ImprovedDisarm);
                 if (Main.ModSettings.Disarm) {
-                    var shieldBashAbility = ResourcesLibrary.TryGetBlueprint<BlueprintAbility>(ExistingGuids.DisarmAction);
-                    for (int i = 0; i < blueprint.ComponentsArray.Length; i++) {
-                        if (blueprint.ComponentsArray[i] is AddFacts component) {
-                            if (component.Facts.Contains(shieldBashAbility)) {
-                                var list = blueprint.ComponentsArray.ToList();
-                                list.Remove(component);
-                                blueprint.ComponentsArray = list.ToArray();
+                    if (!ProperFlanking20.IsActive) {
+                        var disarmAction = ResourcesLibrary.TryGetBlueprint<BlueprintAbility>(ExistingGuids.DisarmAction);
+                        for (int i = 0; i < blueprint.ComponentsArray.Length; i++) {
+                            if (blueprint.ComponentsArray[i] is AddFacts component) {
+                                if (component.Facts.Contains(disarmAction)) {
+                                    var list = blueprint.ComponentsArray.ToList();
+                                    list.Remove(component);
+                                    blueprint.ComponentsArray = list.ToArray();
+                                }
+                                break;
                             }
-                            break;
                         }
                     }
                     Helpers.BlueprintUnitFactDisplayName(blueprint) = LocalizedStringHelper.GetLocalizedString(StringGuids.ImprovedDisarm);

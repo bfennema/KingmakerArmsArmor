@@ -11,7 +11,7 @@ namespace ArmsArmor
     public class ProvokeAttackOfOpportunity : RuleInitiatorLogicComponent<RuleCombatManeuver>
     {
         public override void OnEventAboutToTrigger(RuleCombatManeuver evt) {
-            if (evt.Type == Type && evt.Reason?.Ability?.Blueprint == Ability && !base.Owner.HasFact(Feature)) {
+            if (evt.Type == Type && (evt.Reason?.Ability?.Blueprint == Ability || evt.Reason?.Rule is RuleCombatManeuver) && !base.Owner.HasFact(Feature)) {
                 Helpers.ImmediateAttackOfOpportunity(evt.Target.CombatState, evt.Initiator);
             }
         }

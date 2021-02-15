@@ -1,3 +1,4 @@
+using System.Linq;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Facts;
@@ -8,7 +9,7 @@ using UnityEngine;
 
 namespace ArmsArmor
 {
-    public class SunderBasicMechanics {
+    public class SunderArmorBasicMechanics {
         static BlueprintFeature blueprint = null;
         static public BlueprintFeature GetBlueprint() {
             if (!blueprint) {
@@ -35,6 +36,12 @@ namespace ArmsArmor
                 ResourcesLibrary.LibraryObject.GetAllBlueprints()?.Add(blueprint);
             }
             return blueprint;
+        }
+
+        static public void AddComponent(BlueprintComponent component) {
+            var list = blueprint.ComponentsArray.ToList();
+            list.Add(component);
+            blueprint.ComponentsArray = list.ToArray();
         }
     }
 }

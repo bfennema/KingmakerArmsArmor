@@ -190,7 +190,7 @@
     <Compile Include="Mechanics\NonProficiencyAttackPenalty.cs" />
     <Compile Include="Mechanics\ProvokeAttackOfOpportunity.cs" />
     <Compile Include="Mechanics\ShieldBashRemoveACBonus.cs" />
-    <Compile Include="Mechanics\SunderBasicMechanics.cs" />
+    <Compile Include="Mechanics\SunderArmorBasicMechanics.cs" />
     <Compile Include="Mechanics\TripBasicMechanics.cs" />
     <Compile Include="Mechanics\TwoWeaponFighting.cs" />
     <Compile Include="Patches\BashingFinish.cs" />
